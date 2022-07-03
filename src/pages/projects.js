@@ -5,6 +5,7 @@ import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import maviThumbnail from "../images/mavi-thumbnail.png";
 import jspThumbnail from "../images/jsp-thumbnail.png";
 import withLoveThumbnail from "../images/withlove-thumbnail.png";
+import telegramThumbnail from "../images/telegram-roster-bot-thumbnail.png";
 import { Helmet } from "react-helmet";
 
 const ProjectsPage = () => {
@@ -88,8 +89,38 @@ const ProjectsPage = () => {
               className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
             />
           </div>
-        </div>
 
+          <div className="bg-gradient-to-br from-sky-600 to-blue-800 rounded-3xl">
+            <div className="w-auto h-auto p-8 md:p-12 pb-0 text-white text-opacity-90">
+              <div className="mb-12">
+                <h3 className="text-base">
+                  Telegram Roster Bot (Bot Programming)
+                </h3>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  Because I can't remember it is whose turn to clean toilet and
+                  house this week
+                </h2>
+              </div>
+              <a href="/projects/telegram-roster-bot">
+                <span className="rounded-2xl bg-gradient-to-b from-white to-[#FFFFFFCC] px-4 md:px-8 py-4 cursor-pointer text-sky-500 font-bold uppercase hover:bg-blend-overlay hover:text-white">
+                  Read blog
+                </span>
+              </a>
+              <a
+                href="https://github.com/tanshinjie/telegram-roster-bot"
+                target="_blank"
+              >
+                <span className="px-4 md:px-8 py-4 cursor-pointer font-bold uppercase hover:bg-blend-overlay hover:text-blue-400">
+                  View source code
+                </span>
+              </a>
+            </div>
+            <img
+              src={telegramThumbnail}
+              className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
+            />
+          </div>
+        </div>
         <footer className="text-center text-sm opacity-50 my-5">
           © 2020-2021 Tan Shin Jie
         </footer>

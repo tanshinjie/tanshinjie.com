@@ -3,6 +3,7 @@ import "../styles/global.css";
 import src from "../images/shinjie.jpg";
 import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
 import { Helmet } from "react-helmet";
+import { Link } from "../components/Content";
 
 const Card = (props) => {
   const className = props.className ?? "";
@@ -10,25 +11,6 @@ const Card = (props) => {
     <div className={`shadow-md p-6 xl:p-8 rounded-2xl ${className}`}>
       {props.children}
     </div>
-  );
-};
-
-const Link = (props) => {
-  let className = "";
-  if (props.hasTooltip) {
-    className += "has-tooltip ";
-  }
-  return (
-    <a
-      href={props.link}
-      target="_blank"
-      className={
-        className +
-        "font-medium hover:text-indigo-500 hover:cursor-pointer inline-block"
-      }
-    >
-      {props.children}
-    </a>
   );
 };
 

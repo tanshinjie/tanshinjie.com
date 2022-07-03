@@ -26,3 +26,23 @@ export const List = (props) => (
 export const Image = (props) => (
   <img src={props.src} alt="Placeholder" className="my-4" />
 );
+
+export const Link = (props) => {
+  let className = "";
+  if (props.hasTooltip) {
+    className += "has-tooltip ";
+  }
+  return (
+    <a
+      href={props.link}
+      target="_blank"
+      className={
+        className + "font-medium hover:text-indigo-500 hover:cursor-pointer"
+      }
+    >
+      &nbsp;
+      {props.children}
+      &nbsp;
+    </a>
+  );
+};
