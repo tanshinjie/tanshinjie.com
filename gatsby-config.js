@@ -29,5 +29,13 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: false,
+        id: 3058856,
+        sv: 6,
+      },
+    },
   ],
 };

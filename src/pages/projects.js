@@ -41,6 +41,14 @@ const ProjectsPage = () => {
                   Read case study
                 </span>
               </a>
+              <a
+                href="https://www.figma.com/proto/s8HCd96KKzSqMz6b2jruso/Mavi-Hi-Fi-Prototype-Demo?node-id=166%3A6156&scaling=scale-down&page-id=0%3A1&starting-point-node-id=166%3A6156&show-proto-sidebar=1"
+                target="_blank"
+              >
+                <span className="px-4 md:px-8 py-4 cursor-pointer font-bold uppercase hover:bg-blend-overlay hover:text-[#ac8eff]">
+                  View demo
+                </span>
+              </a>
             </div>
             <img
               src={maviThumbnail}
