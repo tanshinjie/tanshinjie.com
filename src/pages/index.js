@@ -27,7 +27,7 @@ const IndexPage = () => {
   return (
     <main>
       <Helmet>
-        <title>Shin Jie - Frontend Engineer | UIUX Designer</title>
+        <title>Shin Jie - Frontend Engineer</title>
       </Helmet>
       <div className="max-w-xl m-auto [&>*]:mb-5 px-6 pt-5">
         <Card className="bg-gradient-to-r from-cyan-300 to-indigo-500 text-white text-opacity-90 mt-0 py-4 px-4">
@@ -42,7 +42,7 @@ const IndexPage = () => {
                 Hi! I'm Shin Jie 🚀
               </h1>
               <h2 className="text-sm md:text-base font-medium">
-                Frontend engineer and UIUX designer
+                Frontend Engineer &lt;👨‍💻 /&gt;
               </h2>
             </div>
           </div>
@@ -65,15 +65,15 @@ const IndexPage = () => {
           <div className="flex flex-col gap-5">
             <p>
               UIUX Development @{" "}
-              <Link link={"https://aegis-technologies.com.sg/"}>
+              <Link link={"https://aegis-technologies.com.sg/"} target="_blank">
                 Aegis Technologies
               </Link>
             </p>
             <p>Living in 📍 Singapore</p>
             <p>
-              Looking forward to{" "}
-              <Link link="https://www.youtube.com/watch?v=Go8nTmfrQd8">
-                Thor: Love and Thunder 💘 + ⚡
+              Listening to
+              <Link link="https://www.youtube.com/watch?v=ciZcbvG8uro" target="_blank">
+                John Mayer's Sob Rock album 🎸
               </Link>
             </p>
           </div>
