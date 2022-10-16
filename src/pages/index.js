@@ -64,15 +64,18 @@ const IndexPage = () => {
           </div>
           <div className="flex flex-col gap-5">
             <p>
-              UIUX Development @{" "}
-              <Link link={"https://aegis-technologies.com.sg/"} target="_blank">
-                Aegis Technologies
+              Building Alternative Assets Marketplace Platform @
+              <Link link={"https://altagroup.co/who-we-are"} target="_blank">
+                Alta Group
               </Link>
             </p>
             <p>Living in 📍 Singapore</p>
             <p>
               Listening to
-              <Link link="https://www.youtube.com/watch?v=ciZcbvG8uro" target="_blank">
+              <Link
+                link="https://www.youtube.com/watch?v=ciZcbvG8uro"
+                target="_blank"
+              >
                 John Mayer's Sob Rock album 🎸
               </Link>
             </p>
