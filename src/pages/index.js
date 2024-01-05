@@ -27,9 +27,9 @@ const IndexPage = () => {
   return (
     <main>
       <Helmet>
-        <title>Shin Jie - Frontend Engineer</title>
+        <title>Shin Jie - Software Engineer</title>
       </Helmet>
-      <div className="max-w-xl m-auto [&>*]:mb-5 px-6 pt-5">
+      <div className="max-w-2xl m-auto [&>*]:mb-5 px-6 pt-5">
         <Card className="bg-gradient-to-r from-cyan-300 to-indigo-500 text-white text-opacity-90 mt-0 py-4 px-4">
           <div className="flex items-center gap-6">
             <img
@@ -42,7 +42,7 @@ const IndexPage = () => {
                 Hi! I'm Shin Jie 🚀
               </h1>
               <h2 className="text-sm md:text-base font-medium">
-                Frontend Engineer &lt;👨‍💻 /&gt;
+                Software Engineer &lt;👨💻🌐 /&gt;
               </h2>
             </div>
           </div>
@@ -64,43 +64,73 @@ const IndexPage = () => {
           </div>
           <div className="flex flex-col gap-5">
             <p>
-              Building Alternative Assets Marketplace Platform @
-              <Link link={"https://altagroup.co/who-we-are"} target="_blank">
-                Alta Group
+              Building Alternative Assets Ecosystem @
+              <Link link={"https://alta.exchange/about-alta"} target="_blank">
+                Alta (formerly known as Fundnel)
               </Link>
             </p>
             <p>Living in 📍 Singapore</p>
             <p>
               Listening to
               <Link
-                link="https://www.youtube.com/watch?v=ciZcbvG8uro"
+                link="https://www.youtube.com/watch?v=6Yf4tPL6_Xw&list=OLAK5uy_muHM4bW4UeOaYUXhH_1DUaaLEwdDWI5DM&index=3"
                 target="_blank"
               >
-                John Mayer's Sob Rock album 🎸
+                LAUV - All 4 Nothing 🎸
               </Link>
+            </p>
+          </div>
+        </Card>
+        <Card className="bg-gradient-to-b from-[#FDFDFD] to-[#FDFDFD41] mt-5">
+          <div className="flex gap-2 items-center mb-8">
+            <div className="w-3 h-3 rounded-full bg-gray-500 inline-block animate-pulse" />
+            <h2 className="uppercase font-medium opacity-30">Previously</h2>
+          </div>
+          <div className="flex flex-col gap-5">
+            <p>
+              Building modern web apps @
+              <Link link={"https://aegis-technologies.com.sg/"} target="_blank">
+                Aegis Technologies
+              </Link>
+              ,
+              <Link
+                link={"https://www.proofpoint.com/us/dathena-is-now-proofpoint"}
+                target="_blank"
+              >
+                Dathena (now ProofPoint)
+              </Link>{" "}
             </p>
           </div>
         </Card>
         <Card className="bg-gradient-to-b from-[#FDFDFD] to-[#FDFDFD41]">
           <div className="flex gap-2 items-center mb-8">
-            <h2 className="uppercase font-medium opacity-30">More about me</h2>
+            <h2 className="uppercase font-medium opacity-30">
+              Little about me
+            </h2>
           </div>
           <div className="flex flex-col gap-5">
             <p>
-              Born and raised in Penang 🌴 up until 4 years ago when I left home
-              to pursue my undergraduate studies in SUTD. Not knowing what
-              design and technology are about, everything seems like a surprise
-              to me 😲. While the journey is certainly fun and challenging, I
-              think what's more important for me is having the chance to pick up
-              valuable skills like programming 💻, working in teams🔥, and
-              design thinking 💭.
-            </p>
-            <p>
-              As much as I wanted to label myself as a designer or engineer, I
-              felt like a misfit either way because I don't draw the best
-              graphics or make the coolest robots. Nonetheless, I certainly look
-              forward to use what I learnt from my design education to create
-              useful, beautiful and delightful products.
+              <ol>
+                <li>· Born and raised in beatiful Penang, Malaysia 🌴</li>
+                <li>· Graduated in Computer Science from SUTD 🎓</li>
+                <li>
+                  · Enjoys building softwares, it brings satisfaction and pays
+                  the bills. 🤩
+                </li>
+                <li>
+                  · Eats salad 🥗 as lunch every Tuesday and Thursday (as much
+                  as possible)
+                </li>
+                <li>
+                  · Favourite quote at the moment:
+                  <br />
+                  <i>
+                    "It costs you a billion dollar not knowing how to make a
+                    billion dollar."
+                  </i>{" "}
+                  🤔
+                </li>
+              </ol>
             </p>
           </div>
         </Card>
@@ -142,7 +172,8 @@ const IndexPage = () => {
         </Card>
       </div>
       <footer className="text-center text-sm opacity-50 my-5">
-        © 2020-2021 Tan Shin Jie
+        © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️ by
+        yours truly.
       </footer>
     </main>
   );

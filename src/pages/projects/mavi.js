@@ -377,7 +377,8 @@ const MaviPage = () => {
             </Body>
           </div>
           <footer className="text-center text-sm opacity-50 my-5">
-            © 2020-2021 Tan Shin Jie
+            © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️
+            by yours truly.
           </footer>
         </div>
       </div>

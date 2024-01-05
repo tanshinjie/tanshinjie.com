@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/global.css";
 import src from "../images/shinjie.jpg";
 import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
+import grluxuryThumbnail from "../images/grluxury-thumbnail.png";
+import artDistrictThumbnail from "../images/artdistrict-thumbnail.png";
 import maviThumbnail from "../images/mavi-thumbnail.png";
 import jspThumbnail from "../images/jsp-thumbnail.png";
 import withLoveThumbnail from "../images/withlove-thumbnail.png";
@@ -28,6 +30,47 @@ const ProjectsPage = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="bg-gradient-to-br from-[#adc8e1] to-[#70a2d1] rounded-3xl">
+            <div className="w-auto h-auto p-8 md:p-12 pb-0 text-gray-800 text-opacity-90">
+              <div className="mb-12">
+                <h3 className="text-base">GR Luxury Singapore</h3>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  Website revamp for Singapore's fine watch dealer, improving
+                  user experience
+                </h2>
+              </div>
+              <a href="https://www.grluxury.sg/" target="_blank">
+                <span className="rounded-2xl bg-gradient-to-b from-gray-800 to-[#000000CC] px-4 md:px-8 py-4 cursor-pointer text-[#eee] font-bold uppercase hover:bg-blend-overlay hover:text-white">
+                  View live site
+                </span>
+              </a>
+            </div>
+            <img
+              src={grluxuryThumbnail}
+              className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
+            />
+          </div>
+          <div className="bg-gradient-to-br from-[#eee] to-[#ddd] rounded-3xl">
+            <div className="w-auto h-auto p-8 md:p-12 pb-0 text-gray-800 text-opacity-90">
+              <div className="mb-12">
+                <h3 className="text-base">Art District Singapore</h3>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  Singapore's premier art gallery showcasing a stunning
+                  collection of fine art pieces
+                </h2>
+              </div>
+              <a href="https://www.artdistrict.sg/" target="_blank">
+                <span className="rounded-2xl bg-gradient-to-b from-gray-800 to-[#000000CC] px-4 md:px-8 py-4 cursor-pointer text-[#eee] font-bold uppercase hover:bg-blend-overlay hover:text-white">
+                  View live site
+                </span>
+              </a>
+            </div>
+            <img
+              src={artDistrictThumbnail}
+              className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
+            />
+          </div>
+
           <div className="bg-gradient-to-br from-[#7850e6] to-[#5F2EEA] rounded-3xl">
             <div className="w-auto h-auto p-8 md:p-12 pb-0 text-white text-opacity-90">
               <div className="mb-12">
@@ -130,7 +173,8 @@ const ProjectsPage = () => {
           </div>
         </div>
         <footer className="text-center text-sm opacity-50 my-5">
-          © 2020-2021 Tan Shin Jie
+          © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️ by
+          yours truly.
         </footer>
       </div>
     </main>
