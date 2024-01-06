@@ -111,7 +111,7 @@ const IndexPage = () => {
           <div className="flex flex-col gap-5">
             <p>
               <ol>
-                <li>· Born and raised in beatiful Penang, Malaysia 🌴</li>
+                <li>· Born and raised in beautiful Penang, Malaysia 🌴</li>
                 <li>· Graduated in Computer Science from SUTD 🎓</li>
                 <li>
                   · Enjoys building softwares, it brings satisfaction and pays
