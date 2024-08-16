@@ -5,7 +5,7 @@ import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
 import { Helmet } from "react-helmet";
 import { Link } from "../components/Content";
 
-const Card = (props) => {
+export const Card = (props) => {
   const className = props.className ?? "";
   return (
     <div className={`shadow-md p-6 xl:p-8 rounded-2xl ${className}`}>
@@ -18,7 +18,6 @@ const IndexPage = () => {
   const [tooltipText, setTooltipText] = React.useState("Copy to clipboard");
 
   const copyToClipboard = () => {
-    console.log("hello");
     navigator.clipboard.writeText("shinjie.work@gmail.com");
     setTooltipText("Copied shinjie.work@gmail.com");
     setTimeout(() => setTooltipText("Click to copy to clipboard"), 2000);
@@ -47,16 +46,28 @@ const IndexPage = () => {
             </div>
           </div>
         </Card>
-        <a href="/projects" className="group">
-          <Card className="border shadow-none group-hover:bg-gradient-to-r from-purple-500 to-pink-500">
-            <div className="flex justify-between items-center group-hover:text-white">
-              <h2 className="uppercase font-medium opacity-30  group-hover:opacity-90">
-                Explore my projects
-              </h2>
-              <ArrowNarrowRightIcon className="opacity-30 h-4 group-hover:w-9 group-hover:opacity-80" />
-            </div>
-          </Card>
-        </a>
+        <div className="flex gap-4">
+          <a href="/sjtan" className="group w-full">
+            <Card className="border shadow-none group-hover:bg-gradient-to-r text-white rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">
+              <div className="flex justify-between items-center group-hover:text-white">
+                <h2 className="uppercase font-medium opacity-80  group-hover:opacity-90">
+                  Development Services
+                </h2>
+                <ArrowNarrowRightIcon className="opacity-80 h-4 group-hover:w-9 group-hover:opacity-80" />
+              </div>
+            </Card>
+          </a>
+          <a href="/scratchpad" className="group w-full">
+            <Card className="border shadow-none group-hover:bg-gradient-to-r from-purple-500 to-pink-500">
+              <div className="flex justify-between items-center group-hover:text-white">
+                <h2 className="uppercase font-medium opacity-30  group-hover:opacity-90">
+                  Scratchpad
+                </h2>
+                <ArrowNarrowRightIcon className="opacity-30 h-4 group-hover:w-9 group-hover:opacity-80" />
+              </div>
+            </Card>
+          </a>
+        </div>
         <Card className="bg-gradient-to-b from-[#FDFDFD] to-[#FDFDFD41] mt-5">
           <div className="flex gap-2 items-center mb-8">
             <div className="w-3 h-3 rounded-full bg-green-500 inline-block animate-pulse" />
@@ -81,7 +92,7 @@ const IndexPage = () => {
             </p>
           </div>
         </Card>
-        <Card className="bg-gradient-to-b from-[#FDFDFD] to-[#FDFDFD41] mt-5">
+        <Card className="mt-5 bg-[#FDFDFD41] shadow-sm">
           <div className="flex gap-2 items-center mb-8">
             <div className="w-3 h-3 rounded-full bg-gray-500 inline-block animate-pulse" />
             <h2 className="uppercase font-medium opacity-30">Previously</h2>
