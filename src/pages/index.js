@@ -46,7 +46,7 @@ const IndexPage = () => {
             </div>
           </div>
         </Card>
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <a href="/sjtan" className="group w-full">
             <Card className="border shadow-none group-hover:bg-gradient-to-r text-white rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">
               <div className="flex justify-between items-center group-hover:text-white">
