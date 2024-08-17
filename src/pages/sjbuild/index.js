@@ -24,12 +24,74 @@ const ProjectsPage = () => {
           <p className="opacity-50 group-hover:opacity-80">Shin Jie</p>
         </a>
         <h1 className="text-4xl md:text-5xl font-bold opacity-80 my-10">
-          Welcome to <span className="text-transparent bg-clip-text hover:bg-gradient-to-r rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">SJ Build</span>
+          Welcome to{" "}
+          <span className="text-transparent bg-clip-text hover:bg-gradient-to-r rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">
+            SJ Build
+          </span>
         </h1>
         <h2>
-          This is where I apply the knowledge I've gained from my work experience, education, courses, and self-experimentation to create value for businesses.
+          This is where I apply the knowledge I've gained from my work
+          experience, education, courses, and self-experimentation to create
+          value for businesses.
         </h2>
 
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold opacity-80 mt-10 mb-4">
+            What I offer
+          </h2>
+          <div className="flex flex-col md:flex-row gap-4 ">
+            <Card className="group w-full">
+              <h3 className="font-bold">Funnel and Landing Page Development</h3>
+              <p className="my-4">
+                Best for Coaches, Experts, Service Providers.
+              </p>
+              <div>
+                Engaging landing page powered by automation. Learn more at{" "}
+                <a
+                  href="https://sjfunnel.click"
+                  target="_blank"
+                  className=" underline text-indigo-400 font-bold"
+                >
+                  sjfunnel.click
+                </a>
+                .
+              </div>
+            </Card>
+            <Card className="group w-full">
+              <h3 className="font-bold">Multipage Website Development</h3>
+              <p className="my-4">
+                Best for Corporates, NGOs, E-Commerce Businesses.
+              </p>
+              <div>
+                Image your company site having quality like these sites{" "}
+                <a
+                  href="https://www.openai.com/"
+                  target="_blank"
+                  className=" underline text-indigo-400 font-bold"
+                >
+                  openai.com
+                </a>
+                ,{" "}
+                <a
+                  href="https://www.sonos.com/"
+                  target="_blank"
+                  className=" underline text-indigo-400 font-bold"
+                >
+                  sonos.com
+                </a>
+                ,{" "}
+                <a
+                  href="https://www.virgin.com/"
+                  target="_blank"
+                  className=" underline text-indigo-400 font-bold"
+                >
+                  virgin.com
+                </a>
+                .
+              </div>
+            </Card>
+          </div>
+        </div>
         <h2 className="text-3xl md:text-4xl font-bold opacity-80 mt-10">
           Recent client work
         </h2>
@@ -106,15 +168,15 @@ const ProjectsPage = () => {
         </h2>
         <Card className="md:mx-10 my-8 flex flex-col gap-2 bg-gradient-to-b from-slate-50">
           <h1 className="text-3xl font-bold">
-            Looking to launch your own <br />
+            Looking to launch your next <br />
             <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
               STUNNNING
             </span>{" "}
-            site or{" "}
+            and{" "}
             <span className="bg-gradient-to-r from-orange-500 to-red-500 text-transparent bg-clip-text">
               HIGHHH
             </span>{" "}
-            performance apps? 🚀
+            performance sites? 🚀
           </h1>
           <div>I am your partner in execution, let's make it happen!</div>
           <div>
