@@ -24,7 +24,7 @@ const ProjectsPage = () => {
           <p className="opacity-50 group-hover:opacity-80">Shin Jie</p>
         </a>
         <h1 className="text-4xl md:text-5xl font-bold opacity-80 my-10">
-          Welcome to <span className="text-transparent bg-clip-text hover:bg-gradient-to-r rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">SJ Tan</span>
+          Welcome to <span className="text-transparent bg-clip-text hover:bg-gradient-to-r rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">SJ Build</span>
         </h1>
         <h2>
           This is where I apply the knowledge I've gained from my work experience, education, courses, and self-experimentation to create value for businesses.
