@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import "../../styles/global.css";
 import src from "../../images/shinjie.jpg";
 import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
@@ -40,34 +40,39 @@ const ProjectsPage = () => {
             What I offer
           </h2>
           <div className="flex flex-col md:flex-row gap-4 ">
-            <Card className="group w-full">
-              <h3 className="font-bold">Funnel and Landing Page Development</h3>
+            <Card className="group w-full bg-gradient-to-tr from-slate-600 to-slate-800 text-white">
+              <h3 className="font-bold text-xl text-yellow-300">
+                Funnel and Landing Page Development
+              </h3>
               <p className="my-4">
-                Best for Coaches, Experts, Service Providers.
+                Best for <span className="font-bold">Coaches, Experts, Service Providers</span>.
               </p>
               <div>
-                Engaging landing page powered by automation. Learn more at{" "}
+                Engaging landing page powered by automation. Focus on what matters most. Learn more at{" "}
                 <a
                   href="https://sjfunnel.click"
                   target="_blank"
-                  className=" underline text-indigo-400 font-bold"
+                  className="underline text-indigo-400 font-bold"
                 >
                   sjfunnel.click
                 </a>
                 .
               </div>
             </Card>
-            <Card className="group w-full">
-              <h3 className="font-bold">Multipage Website Development</h3>
+            <Card className="group w-full bg-gradient-to-tl from-slate-600 to-slate-800 text-white">
+              <h3 className="font-bold text-xl text-blue-400">
+                Multipage Website Development
+              </h3>
               <p className="my-4">
-                Best for Corporates, NGOs, E-Commerce Businesses.
+                Best for  <span className="font-bold">Corporates, NGOs, E-Commerce Businesses</span>.
               </p>
               <div>
-                Image your company site having quality like these sites{" "}
+                Customise your site to your needs, no cookie cutter solutions.
+                Build using the same technology as{" "}
                 <a
                   href="https://www.openai.com/"
                   target="_blank"
-                  className=" underline text-indigo-400 font-bold"
+                  className="underline"
                 >
                   openai.com
                 </a>
@@ -75,7 +80,7 @@ const ProjectsPage = () => {
                 <a
                   href="https://www.sonos.com/"
                   target="_blank"
-                  className=" underline text-indigo-400 font-bold"
+                  className="underline"
                 >
                   sonos.com
                 </a>
@@ -83,9 +88,17 @@ const ProjectsPage = () => {
                 <a
                   href="https://www.virgin.com/"
                   target="_blank"
-                  className=" underline text-indigo-400 font-bold"
+                  className="underline"
                 >
                   virgin.com
+                </a>
+                .{" "}
+                <a
+                  className=" underline text-indigo-400 font-bold"
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61564132150176"
+                >
+                  Contact me
                 </a>
                 .
               </div>
