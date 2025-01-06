@@ -96,9 +96,9 @@ const ProjectsPage = () => {
                 <a
                   className=" underline text-indigo-400 font-bold"
                   target="_blank"
-                  href="https://www.facebook.com/profile.php?id=61564132150176"
+                  href="mailto:shinjie.work@gmail.com"
                 >
-                  Contact me
+                  Email me
                 </a>
                 .
               </div>
