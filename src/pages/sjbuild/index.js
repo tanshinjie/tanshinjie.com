@@ -40,7 +40,7 @@ const ProjectsPage = () => {
             What I offer
           </h2>
           <div className="flex flex-col md:flex-row gap-4 ">
-            <Card className="group w-full bg-gradient-to-tr from-slate-600 to-slate-800 text-white">
+            {/* <Card className="group w-full bg-gradient-to-tr from-slate-600 to-slate-800 text-white">
               <h3 className="font-bold text-xl text-yellow-300">
                 Funnel and Landing Page Development
               </h3>
@@ -58,7 +58,7 @@ const ProjectsPage = () => {
                 </a>
                 .
               </div>
-            </Card>
+            </Card> */}
             <Card className="group w-full bg-gradient-to-tl from-slate-600 to-slate-800 text-white">
               <h3 className="font-bold text-xl text-blue-400">
                 Multipage Website Development
@@ -154,7 +154,7 @@ const ProjectsPage = () => {
             />
           </div>
 
-          <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-3xl">
+          {/* <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-3xl">
             <div className="w-auto h-auto p-8 md:p-12 pb-0 text-white text-opacity-90">
               <div className="mb-12">
                 <h3 className="text-base">
@@ -174,7 +174,7 @@ const ProjectsPage = () => {
               src={jspThumbnail}
               className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
             />
-          </div>
+          </div> */}
         </div>
         <h2 className="text-3xl md:text-4xl font-bold opacity-80 mt-10">
           Get in touch
@@ -197,14 +197,14 @@ const ProjectsPage = () => {
             <span className="text-indigo-400 font-bold">
               shinjie.work@gmail.com
             </span>{" "}
-            or you can connect with me on Facebook{" "}
+            {/* or you can connect with me on Facebook{" "}
             <a
               className=" underline text-indigo-400 font-bold"
               target="_blank"
               href="https://www.facebook.com/profile.php?id=61564132150176"
             >
               SJ Tan
-            </a>
+            </a> */}
             .
           </div>
           <p>
