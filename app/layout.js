@@ -46,10 +46,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
-        <footer className="text-center text-sm opacity-50 my-5">
-          © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️ by yours truly.
-        </footer>
       </body>
+      <footer className="text-center text-sm opacity-50 my-5">
+        © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️ by yours truly.
+      </footer>
     </html>
   )
 } 

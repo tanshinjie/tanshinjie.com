@@ -33,17 +33,27 @@ export default function Home() {
                 Hi! I'm Shin Jie 🚀
               </h1>
               <h2 className="text-sm md:text-base font-medium">
-                Software Engineer &lt;👨💻🌐 /&gt;
+                Software Engineer
               </h2>
             </div>
           </div>
         </Card>
         <div className="flex flex-col md:flex-row gap-4">
-          <Link href="/sjbuild" className="group w-full">
+          {/* <Link href="/sjbuild" className="group w-full">
             <Card className="border shadow-none group-hover:bg-gradient-to-r text-white rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">
               <div className="flex justify-between items-center group-hover:text-white">
                 <h2 className="uppercase font-medium opacity-80  group-hover:opacity-90">
                   Development Services
+                </h2>
+                <ArrowNarrowRightIcon className="opacity-80 h-4 group-hover:w-9 group-hover:opacity-80" />
+              </div>
+            </Card>
+          </Link> */}
+          <Link href="/blog" className="group w-full">
+            <Card className="border shadow-none group-hover:bg-gradient-to-r text-white rounded-xl transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-100 hover:bg-pos-100">
+              <div className="flex justify-between items-center group-hover:text-white">
+                <h2 className="uppercase font-medium opacity-80  group-hover:opacity-90">
+                  Blog
                 </h2>
                 <ArrowNarrowRightIcon className="opacity-80 h-4 group-hover:w-9 group-hover:opacity-80" />
               </div>
@@ -65,7 +75,7 @@ export default function Home() {
             <div className="w-3 h-3 rounded-full bg-green-500 inline-block animate-pulse" />
             <h2 className="uppercase font-medium opacity-30">Now</h2>
           </div>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-2">
             <p>
               Building Alternative Assets Ecosystem @
               <CustomLink link={"https://alta.exchange/about-alta"} target="_blank">
@@ -74,12 +84,12 @@ export default function Home() {
             </p>
             <p>Living in 📍 Singapore</p>
             <p>
-              Listening to
+              Recently listening to
               <CustomLink
-                link="https://www.youtube.com/watch?v=6Yf4tPL6_Xw&list=OLAK5uy_muHM4bW4UeOaYUXhH_1DUaaLEwdDWI5DM&index=3"
+                link="https://www.youtube.com/watch?v=vR6_ZVKEhJ4"
                 target="_blank"
               >
-                LAUV - All 4 Nothing 🎸
+                Ne-Yo Tiny Desk Concert 🎶
               </CustomLink>
             </p>
           </div>
@@ -114,25 +124,9 @@ export default function Home() {
           <div className="flex flex-col gap-5">
             <div>
               <ol>
-                <li>· Born and raised in beautiful Penang, Malaysia 🌴</li>
-                <li>· Graduated in Computer Science from SUTD 🎓</li>
-                <li>
-                  · Enjoys building softwares, it brings satisfaction and pays
-                  the bills. 🤩
-                </li>
-                <li>
-                  · Eats salad 🥗 as lunch every Tuesday and Thursday (as much
-                  as possible)
-                </li>
-                <li>
-                  · Favourite quote at the moment:
-                  <br />
-                  <i>
-                    "It costs you a billion dollar not knowing how to make a
-                    billion dollar."
-                  </i>{" "}
-                  🤔
-                </li>
+                <li>· Born and raised in Penang, Malaysia 🌴</li>
+                <li>· Enjoy comedy and design</li>
+                <li>· <a href="https://www.16personalities.com/intp-personality" className="underline" target="_blank">INTP</a> (Last tested Feb 2025)</li>
               </ol>
             </div>
           </div>
@@ -143,7 +137,7 @@ export default function Home() {
               Where to find me
             </h2>
           </div>
-          <div className="flex flex-row gap-5 justify-between">
+          <div className="flex flex-row gap-5">
             <span
               onClick={copyToClipboard}
               className="has-tooltip font-medium hover:text-indigo-500 hover:cursor-pointer inline-block"
@@ -165,15 +159,15 @@ export default function Home() {
               </span>
               💻 Github
             </CustomLink>
-            <CustomLink link="https://dribbble.com/iamshinjie" hasTooltip>
+            {/* <CustomLink link="https://dribbble.com/iamshinjie" hasTooltip>
               <span className="tooltip text-sm shadow-md rounded-md -mt-10 p-2 bg-indigo-400 text-white">
                 Design stuffs
               </span>
               🏀 Dribbble
-            </CustomLink>
+            </CustomLink> */}
           </div>
         </Card>
-      </div>
-    </main>
+      </div >
+    </main >
   );
 } 
