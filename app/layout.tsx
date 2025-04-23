@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   },
   description:
     "Software Engineer based in Singapore with experience in building modern applications.",
+  manifest: "/manifest.json",
+  icons: {
+    icon: [{ url: "/images/shinjie.jpg", type: "image/jpg" }],
+    apple: [{ url: "/images/shinjie.jpg" }],
+  },
   openGraph: {
     title: "Shin Jie",
     description: "This is my portfolio.",
@@ -23,6 +28,14 @@ export const metadata: Metadata = {
     siteName: "Shin Jie",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/shinjie.jpg",
+        width: 600,
+        height: 600,
+        alt: "Shin Jie",
+      },
+    ],
   },
   robots: {
     index: true,
