@@ -9,31 +9,10 @@ export default function WithLovePage() {
     <main>
       <div>
         <div>
-          <div className="h-auto bg-pink-400 px-8">
+          <div className="h-auto bg-pink-400 px-8 rounded-xl">
             <div className="max-w-4xl m-auto">
-              <div className="flex text-white gap-4 pt-8 mb-8">
-                <Link
-                  href="/"
-                  className="flex w-max items-center gap-2 group hover:text-white my-5"
-                >
-                  <Image
-                    src="/images/shinjie.jpg"
-                    alt="Shin Jie"
-                    width={48}
-                    height={48}
-                    className="rounded-full w-12"
-                  />
-                  <p className="opacity-30 group-hover:opacity-80">Shin Jie</p>
-                </Link>
-                <Link
-                  href="/projects"
-                  className="flex px-4 py-1 border border-x-slate-200 rounded-3xl w-max items-center gap-2 hover:bg-indigo-400 group hover:text-white my-5"
-                >
-                  <p className="opacity-50 group-hover:opacity-80">Projects</p>
-                </Link>
-              </div>
               <div className="grid grid-cols-1 gap-6">
-                <h1 className="text-4xl md:text-5xl font-bold text-white text-opacity-80">
+                <h1 className="text-4xl md:text-5xl font-bold text-white text-opacity-80 mt-10">
                   Online chinese wedding ceremony interaction reimagined
                 </h1>
                 <div>
@@ -94,7 +73,7 @@ export default function WithLovePage() {
               </div>
             </div>
           </div>
-          <div className="max-w-4xl m-auto my-16 md:my-56 px-8">
+          <div className="max-w-4xl m-auto my-16 px-8">
             <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
               Design Challenge Statement
             </h3>
@@ -400,10 +379,6 @@ export default function WithLovePage() {
               />
             </div>
           </div>
-          <footer className="text-center text-sm opacity-50 my-5">
-            © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️
-            by yours truly.
-          </footer>
         </div>
       </div>
     </main>
