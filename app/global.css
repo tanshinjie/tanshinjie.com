@@ -17,6 +17,11 @@
   --sh-entity: #e25a1c;
 }
 
+/* Prevent scrollbar layout shift */
+html {
+  scrollbar-gutter: stable;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --sh-class: #4c97f8;
@@ -31,6 +36,10 @@
 
 html {
   min-width: 360px;
+}
+
+body {
+  overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
 }
 
 .prose .anchor {
