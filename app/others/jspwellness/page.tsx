@@ -1,16 +1,13 @@
-'use client';
+"use client";
 
 import React from "react";
-import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
-import ScrollToTop from "../../components/ScrollToTop";
 
 export default function JSPWellnessPage() {
   return (
     <main>
       <div>
-        <ScrollToTop />
         <div>
           <div className="h-auto bg-neutral-900 px-8">
             <div className="max-w-4xl m-auto">
@@ -32,7 +29,6 @@ export default function JSPWellnessPage() {
                   href="/projects"
                   className="flex px-4 py-1 border border-slate-400 rounded-3xl w-max items-center gap-2 hover:bg-indigo-400 group hover:text-white my-5"
                 >
-                  <ArrowNarrowLeftIcon className="w-4 opacity-30 group-hover:opacity-80" />
                   <p className="opacity-50 group-hover:opacity-80">Projects</p>
                 </Link>
               </div>
@@ -92,7 +88,9 @@ export default function JSPWellnessPage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 md:my-56 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Previous Logo</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Previous Logo
+            </h3>
             <div className="my-4">
               <Image
                 src="/images/jspwellness/jsp-logo-previous.png"
@@ -111,7 +109,9 @@ export default function JSPWellnessPage() {
               as a whole at all times. The design that I proposed was one that
               is focus, modern looking and modular.
             </p>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Plan of Attack</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Plan of Attack
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               To begin with, I figured that the company name "JSP" has to be the
               main focus of the logo because it is the only thing that is unique
@@ -124,7 +124,9 @@ export default function JSPWellnessPage() {
               the plan is to start with a focus on "JSP", and then add on the
               remaining part.
             </p>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Exploration with Sketches</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Exploration with Sketches
+            </h3>
             <div className="my-4">
               <Image
                 src="/images/jspwellness/sketches.png"
@@ -151,7 +153,9 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 text-2xl my-8">Adding Supporting Text</h3>
+            <h3 className="font-bold opacity-80 text-2xl my-8">
+              Adding Supporting Text
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Eventually I settled a "JSP" with the spine graphics curving
               outwards and has sound effect graphics. I made the letter "P"
@@ -202,7 +206,9 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Final Design</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Final Design
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Lastly, I added a subtle gradient to the focus of the logo which
               is the "JSP" and the spine to make it pop. In my final
@@ -217,11 +223,17 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Real World Usage</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Real World Usage
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               After I completed the logo, I also helped them to create a few
               graphics to introduce the new logo. You can find the business's
-              Facebook page <a href="#" className="text-blue-500 hover:underline">here</a> (shameless plug XD).
+              Facebook page{" "}
+              <a href="#" className="text-blue-500 hover:underline">
+                here
+              </a>{" "}
+              (shameless plug XD).
             </p>
             <div className="my-4">
               <Image
@@ -232,7 +244,9 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Afterthought</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Afterthought
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               I hope the logo can help the business leave a strong impression on
               people and eventually create trust and improve sales. In this logo
@@ -254,4 +268,4 @@ export default function JSPWellnessPage() {
       </div>
     </main>
   );
-} 
+}

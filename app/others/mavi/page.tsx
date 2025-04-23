@@ -1,16 +1,13 @@
-'use client';
+"use client";
 
 import React from "react";
-import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
-import ScrollToTop from "../../components/ScrollToTop";
 
 export default function MaviPage() {
   return (
     <main>
       <div>
-        <ScrollToTop />
         <div>
           <div className="h-auto bg-[#5F2EEA] px-8">
             <div className="max-w-4xl m-auto">
@@ -32,7 +29,6 @@ export default function MaviPage() {
                   href="/projects"
                   className="flex px-4 py-1 border border-slate-400 rounded-3xl w-max items-center gap-2 hover:bg-indigo-400 group hover:text-white my-5"
                 >
-                  <ArrowNarrowLeftIcon className="w-4 opacity-30 group-hover:opacity-80" />
                   <p className="opacity-50 group-hover:opacity-80">Projects</p>
                 </Link>
               </div>
@@ -95,7 +91,9 @@ export default function MaviPage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 md:my-56 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Project Description</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Project Description
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Singaporean youth's mental health is on the red flag, with 79 of
               them taking their own lifes last year. One of the cause is the
@@ -104,7 +102,9 @@ export default function MaviPage() {
               that could help them better themselves.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Design Process</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Design Process
+            </h3>
             <div className="my-4">
               <Image
                 src="/images/mavi/design-process.png"
@@ -115,7 +115,9 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Identifying the Problem with Research</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Identifying the Problem with Research
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Considering how broad healthcare as a topic is, we used secondary
               research to narrow down the area of focus. One particular article
@@ -160,7 +162,9 @@ export default function MaviPage() {
               </ul>
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">Key insights from research</h3>
+            <h3 className="font-bold opacity-80 text-2xl my-8">
+              Key insights from research
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               <ol>
                 <li>
@@ -173,13 +177,17 @@ export default function MaviPage() {
               </ol>
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Define</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Define
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               We formulated a problem statement to summarise our findings and
               the gap identified.
             </p>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">Problem Statement</h3>
+            <h3 className="font-bold opacity-80 text-2xl my-8">
+              Problem Statement
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Many Singaporean youths lack the guidance, time and effort to
               locate suitable treatments. Besides, the myriad of information
@@ -218,7 +226,9 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Ideate</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Ideate
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               As part of the brainstorming process, each member made sketched
               concepts of the applications. Individually, we experimented with
@@ -266,7 +276,9 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Features</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Features
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Based on the top priority features ranked in the internal ranking,
               we developed 6 main features for the app. Following are the
@@ -327,7 +339,9 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Prototype and Test</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Prototype and Test
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               After completing the mockup, it was important to test the flow of
               the app with real users that fit our personas. For this purpose,
@@ -358,7 +372,9 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Brand Identity</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Brand Identity
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               We named our application "MAVI". The name is an acronym for Mental
               Assistance & Valuable Information. The logo is composed of an M
@@ -387,7 +403,9 @@ export default function MaviPage() {
               for our danger alert and error message.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Final Design</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Final Design
+            </h3>
             <div className="my-4">
               <Image
                 src="/images/mavi/final-design.png"
@@ -398,7 +416,9 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Reflection</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Reflection
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Through developing MAVI, my team and I have come to realise the
               importance of understanding users' needs. By understanding the
@@ -430,4 +450,4 @@ export default function MaviPage() {
       </div>
     </main>
   );
-} 
+}

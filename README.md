@@ -1,47 +1,42 @@
-# Tan Shin Jie - Personal Portfolio
+# Portfolio Blog Starter
 
-This is my personal portfolio website built with Next.js and Tailwind CSS.
+This is a porfolio site template complete with a blog. Includes:
 
-## 🚀 Getting Started
+- MDX and Markdown support
+- Optimized for SEO (sitemap, robots, JSON-LD schema)
+- RSS Feed
+- Dynamic OG images
+- Syntax highlighting
+- Tailwind v4
+- Vercel Speed Insights / Web Analytics
+- Geist font
 
-1. **Install dependencies**
+## Demo
 
-   ```shell
-   npm install
-   ```
+https://portfolio-blog-starter.vercel.app
 
-2. **Start the development server**
+## How to Use
 
-   ```shell
-   npm run dev
-   ```
+You can choose from one of the following two methods to use this repository:
 
-   Your site will be running at `http://localhost:3000`!
+### One-Click Deploy
 
-3. **Building for production**
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
 
-   ```shell
-   npm run build
-   ```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
 
-4. **Running in production mode**
+### Clone and Deploy
 
-   ```shell
-   npm start
-   ```
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
 
-## 📁 Project Structure
+```bash
+pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
+```
 
-The project follows Next.js App Router structure:
+Then, run Next.js in development mode:
 
-- `/app`: Contains all the React components used in the site
-  - `/components`: Reusable components
-  - `/globals.css`: Global CSS styles
-  - `/page.js`: Main homepage
-- `/public`: Static assets (images, etc.)
+```bash
+pnpm dev
+```
 
-## 🧐 Tech Stack
-
-- **Framework**: Next.js
-- **Styling**: Tailwind CSS
-- **Deployment**: (Your deployment platform)
+Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).

@@ -1,16 +1,13 @@
-'use client';
+"use client";
 
 import React from "react";
-import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
-import ScrollToTop from "../../components/ScrollToTop";
 
 export default function WithLovePage() {
   return (
     <main>
       <div>
-        <ScrollToTop />
         <div>
           <div className="h-auto bg-pink-400 px-8">
             <div className="max-w-4xl m-auto">
@@ -32,7 +29,6 @@ export default function WithLovePage() {
                   href="/projects"
                   className="flex px-4 py-1 border border-x-slate-200 rounded-3xl w-max items-center gap-2 hover:bg-indigo-400 group hover:text-white my-5"
                 >
-                  <ArrowNarrowLeftIcon className="w-4 opacity-30 group-hover:opacity-80" />
                   <p className="opacity-50 group-hover:opacity-80">Projects</p>
                 </Link>
               </div>
@@ -99,7 +95,9 @@ export default function WithLovePage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 md:my-56 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Design Challenge Statement</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Design Challenge Statement
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               <b>
                 "COVID-19 has separated some family members from their hometown,
@@ -114,7 +112,9 @@ export default function WithLovePage() {
               ritual and "Togetherness" as the cultural value.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Problem Statement</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Problem Statement
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               With the social distancing measures that were put in place tackle
               the COVID-19 pandemic, physical wedding ceremonies had became
@@ -128,8 +128,12 @@ export default function WithLovePage() {
               highly valued in the Singaporean and Malaysian Chinese community.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Contextual Research</h3>
-            <h3 className="font-bold opacity-80 text-2xl my-8">User Interviews</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Contextual Research
+            </h3>
+            <h3 className="font-bold opacity-80 text-2xl my-8">
+              User Interviews
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               To get a better understanding of the current wedding scene in the
               Singaporean and Malaysian Chinese community, we interviewed a
@@ -191,8 +195,12 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Key findings from user studies</h3>
-            <h3 className="font-bold opacity-80 text-2xl my-8">Pain points for wedding host:</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Key findings from user studies
+            </h3>
+            <h3 className="font-bold opacity-80 text-2xl my-8">
+              Pain points for wedding host:
+            </h3>
             <div className="text-black text-opacity-80 font-medium leading-8 my-4">
               <ul>
                 <li>
@@ -203,7 +211,9 @@ export default function WithLovePage() {
               </ul>
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">Pain points for wedding guest</h3>
+            <h3 className="font-bold opacity-80 text-2xl my-8">
+              Pain points for wedding guest
+            </h3>
             <div className="text-black text-opacity-80 font-medium leading-8 my-4">
               <ul>
                 <li>Camera-shy, afraid to speak up in Zoom</li>
@@ -213,14 +223,20 @@ export default function WithLovePage() {
               </ul>
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">Pain point for both</h3>
+            <h3 className="font-bold opacity-80 text-2xl my-8">
+              Pain point for both
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Sense of detachment because there interaction is not possible.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Personas and Customer Journey Map</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Personas and Customer Journey Map
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
-              From the insights gathered, we came up with 2 personas (one for the wedding couple, another for the guest) and their respective customer journey map.
+              From the insights gathered, we came up with 2 personas (one for
+              the wedding couple, another for the guest) and their respective
+              customer journey map.
             </p>
             <div className="my-4">
               <Image
@@ -259,7 +275,9 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Ideation and Scenario</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Ideation and Scenario
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               I drew some scenario sketches to visualize how one of our
               potential ideas would work in real-world situation.
@@ -283,7 +301,9 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Features</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Features
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               I designed 5 main features for the platform:
             </p>
@@ -333,7 +353,9 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Overall Flow</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Overall Flow
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Host and guest experience different flows in the system:
             </p>
@@ -356,7 +378,9 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Final Design</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Final Design
+            </h3>
             <div className="my-4">
               <Image
                 src="/images/with-love/final-design.png"
@@ -384,4 +408,4 @@ export default function WithLovePage() {
       </div>
     </main>
   );
-} 
+}

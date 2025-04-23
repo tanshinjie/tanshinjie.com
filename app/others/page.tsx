@@ -1,36 +1,77 @@
-'use client';
-
 import React from "react";
-import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ScratchpadPage() {
+export const metadata = {
+  title: "Others",
+  description: "View my other stuffs.",
+};
+
+export default function ProjectsPage() {
   return (
     <main>
+      <div>Place where I put my other stuffs.</div>
       <div className="max-w-5xl m-auto px-6">
-        <Link
-          href="/"
-          className="flex p-4 border rounded-3xl w-max items-center gap-2 hover:bg-indigo-400 group hover:text-white my-5"
-        >
-          <ArrowNarrowLeftIcon className="w-4 opacity-30 group-hover:opacity-80" />
-          <Image
-            src="/images/shinjie.jpg"
-            alt="hero image"
-            width={48}
-            height={48}
-            className="rounded-full w-12"
-          />
-          <p className="opacity-50 group-hover:opacity-80">Shin Jie</p>
-        </Link>
         <h1 className="text-4xl md:text-5xl font-bold opacity-80 my-10">
-          Scratchpad
+          Projects
         </h1>
-        <p className="my-4">
-          A space for my rough ideas, experiments, and random thoughts. It's informal and unpolished—a glimpse into my creative process. Dive in if you're curious!
-        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="bg-gradient-to-br from-[#adc8e1] to-[#70a2d1] rounded-3xl">
+            <div className="w-auto h-auto p-8 md:p-12 pb-0 text-gray-800 text-opacity-90">
+              <div className="mb-12">
+                <h3 className="text-base">GR Luxury Singapore</h3>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  Website revamp for Singapore's fine watch dealer, improving
+                  user experience
+                </h2>
+              </div>
+              <a
+                href="https://www.grluxury.sg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="rounded-2xl bg-gradient-to-b from-gray-800 to-[#000000CC] px-4 md:px-8 py-4 cursor-pointer text-[#eee] font-bold uppercase hover:bg-blend-overlay hover:text-white">
+                  View live site
+                </span>
+              </a>
+            </div>
+            <Image
+              src="/images/grluxury-thumbnail.png"
+              alt="GR Luxury Thumbnail"
+              width={600}
+              height={400}
+              className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
+            />
+          </div>
+          <div className="bg-gradient-to-br from-[#eee] to-[#ddd] rounded-3xl">
+            <div className="w-auto h-auto p-8 md:p-12 pb-0 text-gray-800 text-opacity-90">
+              <div className="mb-12">
+                <h3 className="text-base">Art District Singapore</h3>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  Singapore's premier art gallery showcasing a stunning
+                  collection of fine art pieces
+                </h2>
+              </div>
+              <a
+                href="https://www.artdistrict.sg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="rounded-2xl bg-gradient-to-b from-gray-800 to-[#000000CC] px-4 md:px-8 py-4 cursor-pointer text-[#eee] font-bold uppercase hover:bg-blend-overlay hover:text-white">
+                  View live site
+                </span>
+              </a>
+            </div>
+            <Image
+              src="/images/artdistrict-thumbnail.png"
+              alt="Art District Thumbnail"
+              width={600}
+              height={400}
+              className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
+            />
+          </div>
+
           <div className="bg-gradient-to-br from-[#7850e6] to-[#5F2EEA] rounded-3xl">
             <div className="w-auto h-auto p-8 md:p-12 pb-0 text-white text-opacity-90">
               <div className="mb-12">
@@ -39,7 +80,7 @@ export default function ScratchpadPage() {
                   Mobile app to help promote mental health
                 </h2>
               </div>
-              <Link href="/projects/mavi">
+              <Link href="/others/mavi">
                 <span className="rounded-2xl bg-gradient-to-b from-white to-[#FFFFFFCC] px-4 md:px-8 py-4 cursor-pointer text-[#5F2EEA] font-bold uppercase hover:bg-blend-overlay hover:text-white">
                   Read case study
                 </span>
@@ -63,6 +104,31 @@ export default function ScratchpadPage() {
             />
           </div>
 
+          <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-3xl">
+            <div className="w-auto h-auto p-8 md:p-12 pb-0 text-white text-opacity-90">
+              <div className="mb-12">
+                <h3 className="text-base">
+                  JSP Wellness Bone Alignment (Branding)
+                </h3>
+                <h2 className="text-xl md:text-2xl font-extrabold">
+                  Logo redesign for local bone alignment wellness centre
+                </h2>
+              </div>
+              <Link href="/others/jspwellness">
+                <span className="rounded-2xl bg-gradient-to-b from-white to-[#FFFFFFCC] px-4 md:px-8 py-4 cursor-pointer text-neutral-900 font-bold uppercase hover:bg-blend-overlay hover:text-white">
+                  Read case study
+                </span>
+              </Link>
+            </div>
+            <Image
+              src="/images/jsp-thumbnail.png"
+              alt="JSP Wellness Thumbnail"
+              width={600}
+              height={400}
+              className="mt-8 mx-auto px-6 object-scale-down md:object-fill object-bottom"
+            />
+          </div>
+
           <div className="bg-gradient-to-br from-pink-400 to-pink-500 rounded-3xl">
             <div className="w-auto h-auto p-8 md:p-12 pb-0 text-white text-opacity-90">
               <div className="mb-12">
@@ -71,7 +137,7 @@ export default function ScratchpadPage() {
                   Online chinese wedding ceremony interaction reimagined
                 </h2>
               </div>
-              <Link href="/projects/with-love">
+              <Link href="/others/with-love">
                 <span className="rounded-2xl bg-gradient-to-b from-white to-[#FFFFFFCC] px-4 md:px-8 py-4 cursor-pointer text-pink-500 font-bold uppercase hover:bg-blend-overlay hover:text-white">
                   Read case study
                 </span>
@@ -97,7 +163,7 @@ export default function ScratchpadPage() {
                   house this week
                 </h2>
               </div>
-              <Link href="/projects/telegram-roster-bot">
+              <Link href="/others/telegram-roster-bot">
                 <span className="rounded-2xl bg-gradient-to-b from-white to-[#FFFFFFCC] px-4 md:px-8 py-4 cursor-pointer text-sky-500 font-bold uppercase hover:bg-blend-overlay hover:text-white">
                   Read blog
                 </span>
@@ -124,4 +190,4 @@ export default function ScratchpadPage() {
       </div>
     </main>
   );
-} 
+}

@@ -1,16 +1,13 @@
-'use client';
+"use client";
 
 import React from "react";
-import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
-import ScrollToTop from "../../components/ScrollToTop";
 
 export default function TelegramRosterBotPage() {
   return (
     <main>
       <div>
-        <ScrollToTop />
         <div>
           <div className="h-auto bg-sky-600 px-8">
             <div className="max-w-4xl m-auto">
@@ -32,7 +29,6 @@ export default function TelegramRosterBotPage() {
                   href="/projects"
                   className="flex px-4 py-1 border border-slate-400 rounded-3xl w-max items-center gap-2 hover:bg-indigo-400 group hover:text-white my-5"
                 >
-                  <ArrowNarrowLeftIcon className="w-4 opacity-30 group-hover:opacity-80" />
                   <p className="opacity-50 group-hover:opacity-80">Projects</p>
                 </Link>
               </div>
@@ -92,7 +88,9 @@ export default function TelegramRosterBotPage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 md:my-56 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Weekly Roster</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Weekly Roster
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Since my housemates and I have already agreed that we will split
               the houseworks into two, and each housework would be taken up by a
@@ -114,9 +112,9 @@ export default function TelegramRosterBotPage() {
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               With the routine out of the way, now I just have to build it out.
               I first created a telegram bot through
-              <CustomLink link="https://t.me/botfather">
+              <Link href="https://t.me/botfather" target="_blank">
                 <strong>@BotFather</strong>
-              </CustomLink>
+              </Link>
               , a helper bot created by the telegram team to help developers
               create their own bot. Then I added the bot to my house's group
               chat. The role of the bot is to simply ping our group with that
@@ -131,10 +129,15 @@ export default function TelegramRosterBotPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Implementation</h3>
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+              Implementation
+            </h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               As for the roster generation, I simple forked out a project by
-              <Link href="https://github.com/richierich25/weather-bot.git" target="_blank">
+              <Link
+                href="https://github.com/richierich25/weather-bot.git"
+                target="_blank"
+              >
                 <strong>richierich25</strong>
               </Link>
               on Github where his project was to send the weather information
@@ -203,4 +206,4 @@ export default function TelegramRosterBotPage() {
       </div>
     </main>
   );
-} 
+}
