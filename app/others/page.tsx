@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   return (
     <div>
       <h2 className="font-semibold text-2xl mb-8 tracking-tighter">
-        Places where I put my other stuffs.
+        Places where I put my other stuffs
       </h2>
       <br />
       <div className="grid grid-cols-1 gap-4 max-w-3xl mx-auto">
@@ -25,11 +25,12 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">Art District Singapore</h3>
-            <h2 className="text-base font-bold mb-2">
+            <h3 className="text-sm text-gray-600">Website Development</h3>
+            <h2 className="text-base font-bold mb-2">Art District Singapore</h2>
+            <p className="text-sm text-gray-500 mb-3">
               Singapore's premier art gallery showcasing a stunning collection
               of fine art pieces
-            </h2>
+            </p>
             <a
               href="https://www.artdistrict.sg/"
               target="_blank"
@@ -52,12 +53,11 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">
-              MAVI (Mobile App UIUX Design)
-            </h3>
-            <h2 className="text-base font-bold mb-2">
+            <h3 className="text-sm text-gray-600">Mobile App UIUX Design</h3>
+            <h2 className="text-base font-bold mb-2">MAVI</h2>
+            <p className="text-sm text-gray-500 mb-3">
               Mobile app to help promote mental health
-            </h2>
+            </p>
             <div className="flex space-x-2">
               <Link href="/others/mavi">
                 <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
@@ -87,12 +87,11 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">
-              JSP Wellness Bone Alignment
-            </h3>
-            <h2 className="text-base font-bold mb-2">
+            <h3 className="text-sm text-gray-600">Logo Design</h3>
+            <h2 className="text-base font-bold mb-2">JSP Wellness</h2>
+            <p className="text-sm text-gray-500 mb-3">
               Logo redesign for local bone alignment wellness centre
-            </h2>
+            </p>
             <Link href="/others/jspwellness">
               <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
                 Read case study
@@ -111,12 +110,11 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">
-              With Love (UIUX & Concept Design)
-            </h3>
-            <h2 className="text-base font-bold mb-2">
+            <h3 className="text-sm text-gray-600">UIUX & Concept Design</h3>
+            <h2 className="text-base font-bold mb-2">With Love</h2>
+            <p className="text-sm text-gray-500 mb-3">
               Online chinese wedding ceremony interaction reimagined
-            </h2>
+            </p>
             <Link href="/others/with-love">
               <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
                 Read case study
@@ -135,11 +133,12 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">Telegram Roster Bot</h3>
-            <h2 className="text-base font-bold mb-2">
+            <h3 className="text-sm text-gray-600">Bot Programming</h3>
+            <h2 className="text-base font-bold mb-2">Telegram Roster Bot</h2>
+            <p className="text-sm text-gray-500 mb-3">
               Because I can't remember it is whose turn to clean toilet and
               house this week
-            </h2>
+            </p>
             <div className="flex space-x-2">
               <Link href="/others/telegram-roster-bot">
                 <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
