@@ -5,7 +5,6 @@ import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollToTop from "../../components/ScrollToTop";
-import { Link as CustomLink } from "../../components/Content";
 
 export default function TelegramRosterBotPage() {
   return (
@@ -135,9 +134,9 @@ export default function TelegramRosterBotPage() {
             <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">Implementation</h3>
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               As for the roster generation, I simple forked out a project by
-              <CustomLink link="https://github.com/richierich25/weather-bot.git">
+              <Link href="https://github.com/richierich25/weather-bot.git" target="_blank">
                 <strong>richierich25</strong>
-              </CustomLink>
+              </Link>
               on Github where his project was to send the weather information
               every 15 minutes. I modify the code to fit my own use case.
               Basically, I have a nodejs main function which will get invoked
@@ -158,9 +157,9 @@ export default function TelegramRosterBotPage() {
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               Lastly, to automatically trigger the script at the same time every
               week, I used
-              <CustomLink link="https://github.com/features/actions">
+              <Link href="https://github.com/features/actions" target="_blank">
                 <strong>Github Action</strong>
-              </CustomLink>
+              </Link>
               to do the job. One caveat I noticed was that the time I received
               the message from the bot is not the time configured on Github
               Action. After a quick search online, it was probably due to a
@@ -180,9 +179,9 @@ export default function TelegramRosterBotPage() {
             <p className="text-black text-opacity-80 font-medium leading-8 my-4">
               And that's basically it! A simple over-the-weekend project that
               solves my own need. Hope you enjoy reading this piece, thank you
-              <CustomLink link="https://github.com/richierich25">
+              <Link href="https://github.com/richierich25" target="_blank">
                 <strong>richierich25</strong>
-              </CustomLink>
+              </Link>
               for the original project, Github for the free services and my
               lovely housemates for keeping our house clean!
             </p>

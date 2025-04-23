@@ -1,6 +1,7 @@
 import './globals.css'
 
 export const metadata = {
+  metadataBase: new URL('https://tanshinjie.com'),
   title: {
     default: 'Shin Jie - Software Engineer',
     template: '%s | Shin Jie'
@@ -46,10 +47,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
+        <footer className="text-center text-sm opacity-50 my-5">
+          © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️ by yours truly.
+        </footer>
       </body>
-      <footer className="text-center text-sm opacity-50 my-5">
-        © 2020-{new Date().getFullYear()} Tan Shin Jie. Site built with ❤️ by yours truly.
-      </footer>
     </html>
   )
 } 

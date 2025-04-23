@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
-import { Link as CustomLink } from "./components/Content";
-import { Card } from "./components/Card";
+import { Card } from "@/app/components/Card";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -78,19 +77,19 @@ export default function Home() {
           <div className="flex flex-col gap-2">
             <p>
               Building Alternative Assets Ecosystem @
-              <CustomLink link={"https://alta.exchange/about-alta"} target="_blank">
+              <Link href={"https://alta.exchange/about-alta"} target="_blank">
                 Alta (formerly known as Fundnel)
-              </CustomLink>
+              </Link>
             </p>
             <p>Living in 📍 Singapore</p>
             <p>
               Recently listening to
-              <CustomLink
-                link="https://www.youtube.com/watch?v=vR6_ZVKEhJ4"
+              <Link
+                href="https://www.youtube.com/watch?v=vR6_ZVKEhJ4"
                 target="_blank"
               >
                 Ne-Yo Tiny Desk Concert 🎶
-              </CustomLink>
+              </Link>
             </p>
           </div>
         </Card>
@@ -102,16 +101,19 @@ export default function Home() {
           <div className="flex flex-col gap-5">
             <p>
               Building modern web apps @
-              <CustomLink link={"https://aegis-technologies.com.sg/"} target="_blank">
+              <Link
+                href={"https://aegis-technologies.com.sg/"}
+                target="_blank"
+              >
                 Aegis Technologies
-              </CustomLink>
+              </Link>
               ,
-              <CustomLink
-                link={"https://www.proofpoint.com/us/dathena-is-now-proofpoint"}
+              <Link
+                href={"https://www.proofpoint.com/us/dathena-is-now-proofpoint"}
                 target="_blank"
               >
                 Dathena (now ProofPoint)
-              </CustomLink>{" "}
+              </Link>{" "}
             </p>
           </div>
         </Card>
@@ -147,24 +149,18 @@ export default function Home() {
               </span>
               📩 Email
             </span>
-            <CustomLink link="https://www.linkedin.com/in/tanshinjie/" hasTooltip>
+            <Link href="https://www.linkedin.com/in/tanshinjie/" target="_blank">
               <span className="tooltip text-sm shadow-md rounded-md -mt-10 p-2 bg-indigo-400 text-white">
                 Let's connect!
               </span>
               💼 LinkedIn
-            </CustomLink>
-            <CustomLink link="https://github.com/tanshinjie" hasTooltip>
+            </Link>
+            <Link href="https://github.com/tanshinjie" target="_blank">
               <span className="tooltip text-sm shadow-md rounded-md -mt-10 p-2 bg-indigo-400 text-white">
                 Programming stuffs
               </span>
               💻 Github
-            </CustomLink>
-            {/* <CustomLink link="https://dribbble.com/iamshinjie" hasTooltip>
-              <span className="tooltip text-sm shadow-md rounded-md -mt-10 p-2 bg-indigo-400 text-white">
-                Design stuffs
-              </span>
-              🏀 Dribbble
-            </CustomLink> */}
+            </Link>
           </div>
         </Card>
       </div >
