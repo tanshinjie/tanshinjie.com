@@ -66,7 +66,7 @@ export default function JSPWellnessPage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Previous Logo
             </h3>
             <div className="my-4">
@@ -78,7 +78,7 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Personally speaking, I felt the logo has too many texts and a
               rather outdated style. Besides, there is no eye catcher on the
               logo because the graphics and the texts seems to be on the same
@@ -87,10 +87,10 @@ export default function JSPWellnessPage() {
               as a whole at all times. The design that I proposed was one that
               is focus, modern looking and modular.
             </p>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Plan of Attack
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               To begin with, I figured that the company name "JSP" has to be the
               main focus of the logo because it is the only thing that is unique
               to the company. To further substantiate the need for emphasis on
@@ -102,7 +102,7 @@ export default function JSPWellnessPage() {
               the plan is to start with a focus on "JSP", and then add on the
               remaining part.
             </p>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Exploration with Sketches
             </h3>
             <div className="my-4">
@@ -114,7 +114,7 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               From the sketches, I realised I could integrate elements of a
               spine or bone into the logo, since bone alignment treatment is the
               main selling point of the company. I used Adobe Illustrator to
@@ -131,10 +131,10 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 text-2xl my-8">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
               Adding Supporting Text
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Eventually I settled a "JSP" with the spine graphics curving
               outwards and has sound effect graphics. I made the letter "P"
               overlap with the spine graphics to make it looks like the spine is
@@ -152,8 +152,10 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 text-2xl my-8">Typography</h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
+              Typography
+            </h3>
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               I decided to use a sans-serif font for the "JSP" because it gave a
               more friendly feel and has the same style as the spine graphics.
               As for I think it gave an impression of a rather young and lively
@@ -170,8 +172,10 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 text-2xl my-8">Color</h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
+              Color
+            </h3>
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               The main color of the company is black and gold, so I kept the two
               and introduced a few more as supporting colors.
             </p>
@@ -184,10 +188,10 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Final Design
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Lastly, I added a subtle gradient to the focus of the logo which
               is the "JSP" and the spine to make it pop. In my final
               deliverables, I also create the grayscale version of the logo.
@@ -201,10 +205,10 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Real World Usage
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               After I completed the logo, I also helped them to create a few
               graphics to introduce the new logo. You can find the business's
               Facebook page{" "}
@@ -222,10 +226,10 @@ export default function JSPWellnessPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Afterthought
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               I hope the logo can help the business leave a strong impression on
               people and eventually create trust and improve sales. In this logo
               redesign journey, the key takeaways for me is to have the courage

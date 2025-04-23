@@ -71,10 +71,10 @@ export default function MaviPage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Project Description
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Singaporean youth's mental health is on the red flag, with 79 of
               them taking their own lifes last year. One of the cause is the
               lack of clear access to help and resources. MAVI is a mobile app
@@ -82,7 +82,7 @@ export default function MaviPage() {
               that could help them better themselves.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Design Process
             </h3>
             <div className="my-4">
@@ -95,10 +95,10 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Identifying the Problem with Research
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Considering how broad healthcare as a topic is, we used secondary
               research to narrow down the area of focus. One particular article
               released by CNA has drawn our attention. The article reported that
@@ -116,7 +116,7 @@ export default function MaviPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Our initial assumption was youths had trouble finding mental
               health information online. To verify this assumption, we
               formulated a survey to get responses from our target user. We
@@ -132,20 +132,20 @@ export default function MaviPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               From the 54 responses gathered, we verified our assumptions, with
             </p>
-            <div className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <div className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               <ul>
                 <li>- 38.5% indicated that the experience was confusing</li>
                 <li>- 44.2% indicated that the experience was overwhelming</li>
               </ul>
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
               Key insights from research
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               <ol>
                 <li>
                   1. People find confusing and overwhelming to find information
@@ -157,18 +157,18 @@ export default function MaviPage() {
               </ol>
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Define
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               We formulated a problem statement to summarise our findings and
               the gap identified.
             </p>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
               Problem Statement
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Many Singaporean youths lack the guidance, time and effort to
               locate suitable treatments. Besides, the myriad of information
               online is overwhelming for those who already had trouble fighting
@@ -178,8 +178,10 @@ export default function MaviPage() {
               to get information on mental health easily and reliably.
             </p>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">Persona</h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
+              Persona
+            </h3>
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               To kick start the design process, I suggested to create personas
               that we all can agree on so that could visualize our target users.
               Michelle was our first persona who represents someone who needs
@@ -206,10 +208,10 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Ideate
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               As part of the brainstorming process, each member made sketched
               concepts of the applications. Individually, we experimented with
               layout, UI elements and the flow of the application. Then, we came
@@ -225,7 +227,7 @@ export default function MaviPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Next, I worked on the wireframe using Figma. I focused on
               developing flow for three parts of the application: the initial
               onboarding flow, assessment flow and resources flow. By creating a
@@ -241,7 +243,7 @@ export default function MaviPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Following this, we conducted an internal ranking session to
               determine which features we should prioritize (since we couldn't
               implement all).
@@ -256,10 +258,10 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Features
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Based on the top priority features ranked in the internal ranking,
               we developed 6 main features for the app. Following are the
               mockups for the app features.
@@ -319,10 +321,10 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Prototype and Test
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               After completing the mockup, it was important to test the flow of
               the app with real users that fit our personas. For this purpose,
               we used Figma to animate our screens and create a prototype that
@@ -338,7 +340,7 @@ export default function MaviPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               We then conducted a user testing, which had revealed several areas
               of improvement. Both UX and UI issues were identified:
             </p>
@@ -352,10 +354,10 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Brand Identity
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               We named our application "MAVI". The name is an acronym for Mental
               Assistance & Valuable Information. The logo is composed of an M
               and A characters. The "M" signifies the mental aspect of the app
@@ -373,7 +375,7 @@ export default function MaviPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               We used purple as our primary colour because we wanted give a
               sense of calm to users. Besides that,purple is also associated
               with creativity, which we hoped could inspire users on the
@@ -383,7 +385,7 @@ export default function MaviPage() {
               for our danger alert and error message.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Final Design
             </h3>
             <div className="my-4">
@@ -396,10 +398,10 @@ export default function MaviPage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Reflection
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Through developing MAVI, my team and I have come to realise the
               importance of understanding users' needs. By understanding the
               user's experience, we can build features that fill in the gap and

@@ -75,27 +75,27 @@ export default function WithLovePage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Design Challenge Statement
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               <b>
                 "COVID-19 has separated some family members from their hometown,
                 how might we recreated some of the activities that will
                 typically be done between family members?"
               </b>
             </p>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               The project began with identifying cultural community, ritual and
               the value behind the ritual. The team has selected Singaporean and
               Malaysia Chinese as the community of focus, Chinese Wedding as the
               ritual and "Togetherness" as the cultural value.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Problem Statement
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               With the social distancing measures that were put in place tackle
               the COVID-19 pandemic, physical wedding ceremonies had became
               inconvenient and dangerous to host. While this unforeseen
@@ -108,13 +108,13 @@ export default function WithLovePage() {
               highly valued in the Singaporean and Malaysian Chinese community.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Contextual Research
             </h3>
-            <h3 className="font-bold opacity-80 text-2xl my-8">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
               User Interviews
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               To get a better understanding of the current wedding scene in the
               Singaporean and Malaysian Chinese community, we interviewed a
               variety of target groups to get different perspectives. These
@@ -132,8 +132,10 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">Affinity Map</h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
+              Affinity Map
+            </h3>
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               As a lot of qualitative data was gathered from the interviews, we
               used an affinity map to find natural patterns in the feedback of
               these four target groups we interviewed. This enabled us to get
@@ -150,8 +152,10 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">Empathy Map</h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
+              Empathy Map
+            </h3>
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               We also wanted to articulate our findings about the different
               target groups that we interviewed. Hence, we created an empathy
               map to aid us in achieving this.
@@ -175,13 +179,13 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Key findings from user studies
             </h3>
-            <h3 className="font-bold opacity-80 text-2xl my-8">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
               Pain points for wedding host:
             </h3>
-            <div className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <div className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               <ul>
                 <li>
                   Difficult to engage individually with guest through
@@ -191,10 +195,10 @@ export default function WithLovePage() {
               </ul>
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
               Pain points for wedding guest
             </h3>
-            <div className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <div className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               <ul>
                 <li>Camera-shy, afraid to speak up in Zoom</li>
                 <li>
@@ -203,17 +207,17 @@ export default function WithLovePage() {
               </ul>
             </div>
 
-            <h3 className="font-bold opacity-80 text-2xl my-8">
+            <h3 className="font-bold opacity-80 text-2xl my-8 dark:text-white">
               Pain point for both
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Sense of detachment because there interaction is not possible.
             </p>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Personas and Customer Journey Map
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               From the insights gathered, we came up with 2 personas (one for
               the wedding couple, another for the guest) and their respective
               customer journey map.
@@ -255,10 +259,10 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Ideation and Scenario
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               I drew some scenario sketches to visualize how one of our
               potential ideas would work in real-world situation.
             </p>
@@ -281,10 +285,10 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Features
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               I designed 5 main features for the platform:
             </p>
             <div className="my-4">
@@ -333,10 +337,10 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Overall Flow
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Host and guest experience different flows in the system:
             </p>
             <div className="my-4">
@@ -358,7 +362,7 @@ export default function WithLovePage() {
               />
             </div>
 
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Final Design
             </h3>
             <div className="my-4">

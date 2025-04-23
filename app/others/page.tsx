@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       </h2>
       <br />
       <div className="grid grid-cols-1 gap-4 max-w-3xl mx-auto">
-        <div className="bg-white border border-gray-200 rounded-xl flex flex-row overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl flex flex-row overflow-hidden">
           <div className="w-1/3 relative">
             <Image
               src="/images/artdistrict-thumbnail.png"
@@ -26,9 +26,13 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">Website Development</h3>
-            <h2 className="text-base font-bold mb-2">Art District Singapore</h2>
-            <p className="text-sm text-gray-500 mb-3">
+            <h3 className="text-sm text-gray-600 dark:text-gray-400">
+              Website Development
+            </h3>
+            <h2 className="text-base font-bold mb-2 dark:text-white">
+              Art District Singapore
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
               Singapore's premier art gallery showcasing a stunning collection
               of fine art pieces
             </p>
@@ -37,14 +41,14 @@ export default function ProjectsPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
+              <span className="text-xs rounded-md bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 px-3 py-2 cursor-pointer text-gray-700 dark:text-gray-300 font-bold uppercase hover:bg-gray-200 dark:hover:bg-gray-600">
                 View live site
               </span>
             </a>
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-xl flex flex-row overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl flex flex-row overflow-hidden">
           <div className="w-1/3 relative">
             <Image
               src="/images/mavi-thumbnail.png"
@@ -54,14 +58,16 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">Mobile App UIUX Design</h3>
-            <h2 className="text-base font-bold mb-2">MAVI</h2>
-            <p className="text-sm text-gray-500 mb-3">
+            <h3 className="text-sm text-gray-600 dark:text-gray-400">
+              Mobile App UIUX Design
+            </h3>
+            <h2 className="text-base font-bold mb-2 dark:text-white">MAVI</h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
               Mobile app to help promote mental health
             </p>
             <div className="flex space-x-2">
               <Link href="/others/mavi">
-                <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
+                <span className="text-xs rounded-md bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 px-3 py-2 cursor-pointer text-gray-700 dark:text-gray-300 font-bold uppercase hover:bg-gray-200 dark:hover:bg-gray-600">
                   Read case study
                 </span>
               </Link>
@@ -70,7 +76,7 @@ export default function ProjectsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-xs px-3 py-2 cursor-pointer text-gray-600 font-bold uppercase hover:text-black">
+                <span className="text-xs px-3 py-2 cursor-pointer text-gray-600 dark:text-gray-400 font-bold uppercase hover:text-black dark:hover:text-white">
                   Figma Prototype
                 </span>
               </a>
@@ -78,7 +84,7 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-xl flex flex-row overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl flex flex-row overflow-hidden">
           <div className="w-1/3 relative">
             <Image
               src="/images/jsp-thumbnail.png"
@@ -88,20 +94,24 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">Logo Design</h3>
-            <h2 className="text-base font-bold mb-2">JSP Wellness</h2>
-            <p className="text-sm text-gray-500 mb-3">
+            <h3 className="text-sm text-gray-600 dark:text-gray-400">
+              Logo Design
+            </h3>
+            <h2 className="text-base font-bold mb-2 dark:text-white">
+              JSP Wellness
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
               Logo redesign for local bone alignment wellness centre
             </p>
             <Link href="/others/jspwellness">
-              <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
+              <span className="text-xs rounded-md bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 px-3 py-2 cursor-pointer text-gray-700 dark:text-gray-300 font-bold uppercase hover:bg-gray-200 dark:hover:bg-gray-600">
                 Read case study
               </span>
             </Link>
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-xl flex flex-row overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl flex flex-row overflow-hidden">
           <div className="w-1/3 relative">
             <Image
               src="/images/withlove-thumbnail.png"
@@ -111,20 +121,24 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">UIUX & Concept Design</h3>
-            <h2 className="text-base font-bold mb-2">With Love</h2>
-            <p className="text-sm text-gray-500 mb-3">
+            <h3 className="text-sm text-gray-600 dark:text-gray-400">
+              UIUX & Concept Design
+            </h3>
+            <h2 className="text-base font-bold mb-2 dark:text-white">
+              With Love
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
               Online chinese wedding ceremony interaction reimagined
             </p>
             <Link href="/others/with-love">
-              <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
+              <span className="text-xs rounded-md bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 px-3 py-2 cursor-pointer text-gray-700 dark:text-gray-300 font-bold uppercase hover:bg-gray-200 dark:hover:bg-gray-600">
                 Read case study
               </span>
             </Link>
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-xl flex flex-row overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl flex flex-row overflow-hidden">
           <div className="w-1/3 relative">
             <Image
               src="/images/telegram-roster-bot-thumbnail.png"
@@ -134,15 +148,19 @@ export default function ProjectsPage() {
             />
           </div>
           <div className="w-2/3 p-4">
-            <h3 className="text-sm text-gray-600">Bot Programming</h3>
-            <h2 className="text-base font-bold mb-2">Telegram Roster Bot</h2>
-            <p className="text-sm text-gray-500 mb-3">
+            <h3 className="text-sm text-gray-600 dark:text-gray-400">
+              Bot Programming
+            </h3>
+            <h2 className="text-base font-bold mb-2 dark:text-white">
+              Telegram Roster Bot
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
               Because I can't remember it is whose turn to clean toilet and
               house this week
             </p>
             <div className="flex space-x-2">
               <Link href="/others/telegram-roster-bot">
-                <span className="text-xs rounded-md bg-gray-100 border border-gray-300 px-3 py-2 cursor-pointer text-gray-700 font-bold uppercase hover:bg-gray-200">
+                <span className="text-xs rounded-md bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 px-3 py-2 cursor-pointer text-gray-700 dark:text-gray-300 font-bold uppercase hover:bg-gray-200 dark:hover:bg-gray-600">
                   Read blog
                 </span>
               </Link>
@@ -151,7 +169,7 @@ export default function ProjectsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-xs px-3 py-2 cursor-pointer text-gray-600 font-bold uppercase hover:text-black">
+                <span className="text-xs px-3 py-2 cursor-pointer text-gray-600 dark:text-gray-400 font-bold uppercase hover:text-black dark:hover:text-white">
                   Source
                 </span>
               </a>

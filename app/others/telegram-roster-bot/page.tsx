@@ -68,28 +68,28 @@ export default function TelegramRosterBotPage() {
             </div>
           </div>
           <div className="max-w-4xl m-auto my-16 px-8">
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Weekly Roster
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Since my housemates and I have already agreed that we will split
               the houseworks into two, and each housework would be taken up by a
               group of two taking turns repeatedly, so we have the following
               arrangement, every week:
             </p>
-            <div className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <div className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               <ul>
                 <li>- Clean toilet: Me, Housemate-A</li>
                 <li>- Clean house floor: Housemate-B, Housemate-C</li>
               </ul>
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               So the logic is simple, one of the weeks I and Housemate-B will
               form a pair to clean the toilet and house respectively, and the
               following week will be Housemate-A and Housemate-C's turns. This
               pattern will repeat indefinitely until we have a new arrangement.
             </p>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               With the routine out of the way, now I just have to build it out.
               I first created a telegram bot through
               <Link href="https://t.me/botfather" target="_blank">
@@ -109,10 +109,10 @@ export default function TelegramRosterBotPage() {
                 className="my-4"
               />
             </div>
-            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center">
+            <h3 className="font-bold opacity-80 my-8 text-3xl md:text-4xl text-center dark:text-white">
               Implementation
             </h3>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               As for the roster generation, I simple forked out a project by
               <Link
                 href="https://github.com/richierich25/weather-bot.git"
@@ -130,14 +130,14 @@ export default function TelegramRosterBotPage() {
               template and fire the telegram's API call to send a message to our
               group through the bot.
             </p>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               As this app is not running 24/7, we cannot save the state in this
               script. To easily solve that, I simply write the next person to a
               file (toilet.txt, house.txt) and retrieve it the next week the
               same script gets executed and updates the file with the next
               person.
             </p>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               Lastly, to automatically trigger the script at the same time every
               week, I used
               <Link href="https://github.com/features/actions" target="_blank">
@@ -159,7 +159,7 @@ export default function TelegramRosterBotPage() {
                 className="my-4"
               />
             </div>
-            <p className="text-black text-opacity-80 font-medium leading-8 my-4">
+            <p className="text-black text-opacity-80 dark:text-white dark:text-opacity-80 font-medium leading-8 my-4">
               And that's basically it! A simple over-the-weekend project that
               solves my own need. Hope you enjoy reading this piece, thank you
               <Link href="https://github.com/richierich25" target="_blank">

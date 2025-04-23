@@ -103,6 +103,7 @@ export default function Page() {
                 <TechBadge>NestJS</TechBadge>
                 <TechBadge>TypeORM</TechBadge>
                 <TechBadge>MySQL</TechBadge>
+                <TechBadge>Firebase</TechBadge>
                 <TechBadge>REST API</TechBadge>
               </div>
             </div>
@@ -193,7 +194,7 @@ export default function Page() {
                   INTP
                 </Link>{" "}
                 <span className="text-neutral-500 text-sm">
-                  (Last tested Feb 2025)
+                  (Last tested in Feb 2025)
                 </span>
               </span>
             </li>
