@@ -2,6 +2,14 @@ import { BlogPosts } from "app/components/posts";
 import Image from "next/image";
 import Link from "next/link";
 
+function TechBadge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 mr-2 mb-2">
+      {children}
+    </span>
+  );
+}
+
 export default function Page() {
   return (
     <section>
@@ -56,6 +64,71 @@ export default function Page() {
               Ne-Yo Tiny Desk Concert 🎶
             </Link>
           </p>
+        </div>
+
+        <div className="space-y-2">
+          <h2 className="text-xl font-medium border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4">
+            Tech Stack
+          </h2>
+          <div>
+            <div className="mb-3">
+              <h3 className="text-sm uppercase text-neutral-500 dark:text-neutral-400 font-medium mb-2">
+                Frontend
+              </h3>
+              <div>
+                <TechBadge>React</TechBadge>
+                <TechBadge>Next.js</TechBadge>
+                <TechBadge>TypeScript</TechBadge>
+                <TechBadge>React Native</TechBadge>
+                <TechBadge>TailwindCSS</TechBadge>
+                <TechBadge>Shadcn UI</TechBadge>
+              </div>
+            </div>
+            <div className="mb-3">
+              <h3 className="text-sm uppercase text-neutral-500 dark:text-neutral-400 font-medium mb-2">
+                Backend
+              </h3>
+              <div>
+                <TechBadge>Node.js</TechBadge>
+                <TechBadge>NestJS</TechBadge>
+                <TechBadge>TypeORM</TechBadge>
+                <TechBadge>MySQL</TechBadge>
+                <TechBadge>REST API</TechBadge>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm uppercase text-neutral-500 dark:text-neutral-400 font-medium mb-2">
+                Tools & Infrastructure
+              </h3>
+              <div>
+                <TechBadge>Docker</TechBadge>
+                <TechBadge>GitHub Actions</TechBadge>
+                <TechBadge>Terraform</TechBadge>
+                <TechBadge>Google Cloud</TechBadge>
+                <TechBadge>Vite</TechBadge>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <h2 className="text-xl font-medium border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4">
+            What I Have Been Doing in the Past 5 Years
+          </h2>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="text-neutral-500 mt-1">→</span>
+              <span>Web development with SPA and SSR pattern</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-neutral-500 mt-1">→</span>
+              <span>API development and database design</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-neutral-500 mt-1">→</span>
+              <span>Cloud infrastructure setup with IaC</span>
+            </li>
+          </ul>
         </div>
 
         <div className="space-y-2">
