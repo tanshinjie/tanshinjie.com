@@ -24,7 +24,7 @@ export function BlogPosts() {
           >
             <div className="flex flex-col space-y-1">
               <div className="w-full flex flex-col md:flex-row md:items-baseline space-y-2 md:space-y-0 md:space-x-4">
-                <p className="text-sm text-neutral-500 dark:text-neutral-400 font-mono">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 font-mono min-w-[120px]">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
                 <p className="text-neutral-900 dark:text-neutral-100 font-medium group-hover:text-black dark:group-hover:text-white transition-colors">
