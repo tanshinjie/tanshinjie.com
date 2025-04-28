@@ -1,0 +1,159 @@
+---
+title: "Do you know `this` Quiz 3?"
+publishedAt: "2025-04-28"
+summary: "Do you know `this` Quiz 3?"
+---
+Here are 10 challenging multiple-choice questions on JavaScript’s `this`, designed to probe deep understanding. Answers and brief explanations follow at the end.
+
+---
+
+1. **In strict mode, what is the value of `this` inside a standalone function call?**  
+   ```js
+   'use strict';
+   function foo() {
+     return this;
+   }
+   console.log(foo());
+   ```  
+   A. The global object (e.g., `window`)  
+   B. `undefined`  
+   C. The function itself (`foo`)  
+   D. A new empty object  
+
+2. **What will be logged here?**  
+   ```js
+   const obj = {
+     counter: 0,
+     inc() {
+       function inner() {
+         this.counter++;
+       }
+       inner();
+     }
+   };
+   obj.inc();
+   console.log(obj.counter);
+   ```  
+   A. `1`  
+   B. `0`  
+   C. `NaN`  
+   D. Throws a TypeError  
+
+3. **Given the code below, what’s printed and why?**  
+   ```js
+   const obj = {
+     value: 42,
+     getValue: () => this.value
+   };
+   console.log(obj.getValue());
+   ```  
+   A. `42`  
+   B. `undefined`  
+   C. Throws ReferenceError  
+   D. Global `value` or error  
+
+4. **What does `this` refer to inside a class constructor?**  
+   ```js
+   class Person {
+     constructor(name) {
+       console.log(this);
+       this.name = name;
+     }
+   }
+   const p = new Person('Alice');
+   ```  
+   A. `undefined`  
+   B. A fresh object instance  
+   C. The class itself (`Person`)  
+   D. Global object  
+
+5. **How does `this` behave when using `new` with an arrow function?**  
+   ```js
+   const Arrow = () => {};
+   const a = new Arrow();
+   ```  
+   A. Works; `this` points to a new instance  
+   B. Throws because arrow functions can’t be constructors  
+   C. `this` is global object  
+   D. `this` remains lexically bound  
+
+6. **Which invocation ensures `this` inside `fn` is permanently bound to `obj`?**  
+   ```js
+   function fn() { return this; }
+   const obj = {};
+   ```  
+   A. `fn.call(obj)`  
+   B. `fn.apply(obj)`  
+   C. `fn.bind(obj)()`  
+   D. All of the above  
+
+7. **What’s the result of this expression?**  
+   ```js
+   const module = {
+     x: 81,
+     getX: function() { return this.x; }
+   };
+   const retrieveX = module.getX;
+   console.log(retrieveX());
+   ```  
+   A. `81`  
+   B. `undefined`  
+   C. Throws TypeError  
+   D. `0`  
+
+8. **Inside an event listener, what is `this` bound to?**  
+   ```html
+   <button id="btn">Click</button>
+   <script>
+     document.getElementById('btn')
+       .addEventListener('click', function() {
+         console.log(this);
+       });
+   </script>
+   ```  
+   A. The button element  
+   B. The document object  
+   C. The global object  
+   D. `undefined` (strict mode)  
+
+9. **What does `this` point to when using `call` on a primitive?**  
+   ```js
+   function showType() {
+     return typeof this;
+   }
+   console.log(showType.call(123));
+   ```  
+   A. `"number"`  
+   B. `"object"`  
+   C. `"undefined"`  
+   D. Throws  
+
+10. **In a chained method call, what is `this` inside the second method?**  
+    ```js
+    const chain = {
+      val: 1,
+      inc() { this.val++; return this; },
+      dec() { this.val--; return this; }
+    };
+    chain.inc().inc().dec();
+    console.log(chain.val);
+    ```  
+    A. `1`  
+    B. `2`  
+    C. `3`  
+    D. `undefined`  
+
+---
+
+## Answer Key
+
+1. **B.** In strict mode, unbound `this` in a function call is `undefined`.  
+2. **B.** `inner()` is a plain function call; in non-strict mode `this` is the global object (so `counter` becomes `NaN`), but in strict mode it’s `undefined` and throws. In sloppy mode shown, it mutates global, so `obj.counter` stays `0`.  
+3. **B.** Arrow functions don’t bind their own `this`; they inherit from the surrounding (module/global) scope where `this.value` is `undefined`.  
+4. **B.** In a constructor called via `new`, `this` is the newly created instance object.  
+5. **B.** Arrow functions lack a [[Construct]] method; using `new` on them throws a TypeError.  
+6. **C.** Only `bind` returns a new function permanently binding `this` to `obj`. `call`/`apply` invoke immediately but don’t create a bound function.  
+7. **B.** Extracting `module.getX` loses its `this` context, so it defaults to undefined (strict) or global (sloppy), giving `undefined`.  
+8. **A.** In a DOM `addEventListener` with a normal function, `this` is the element receiving the event.  
+9. **B.** Primitives are boxed when used as `this`, so `typeof this` is `"object"`.  
+10. **B.** Each call returns the same `chain` object, so `val` increments twice and decrements once: `1 + 2 - 1 = 2`.

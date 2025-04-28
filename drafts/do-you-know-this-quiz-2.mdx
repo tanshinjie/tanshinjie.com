@@ -1,0 +1,330 @@
+---
+
+title: "Do you know `this` Quiz 2?"
+publishedAt: "2025-04-28"
+summary: "Do you know `this` Quiz 2?"
+---
+
+### **1. What is `this` in the global context (outside any function)?**
+
+- A) `undefined`
+- B) The global object (`window` in browsers, `global` in Node.js)
+- C) `null`
+- D) Depends on strict mode
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **2. What does `this` refer to inside a regular function (not an arrow function) called in strict mode?**
+
+- A) The global object
+- B) `undefined`
+- C) The function itself
+- D) The caller object
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **3. What is `this` inside an arrow function?**
+
+- A) Always refers to the global object
+- B) Inherits `this` from the enclosing lexical scope
+- C) Always `undefined`
+- D) Refers to the function itself
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **4. What will `this` be in an object method when called as `obj.method()`?**
+
+- A) The global object
+- B) The object (`obj`)
+- C) `undefined`
+- D) The method itself
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **5. What happens if a method is assigned to a variable and then called?**
+
+```javascript
+const obj = {
+  name: "Alice",
+  greet: function () {
+    console.log(this.name);
+  },
+};
+const greetFunc = obj.greet;
+greetFunc();
+```
+
+- A) Prints `"Alice"`
+- B) Prints `undefined` (or throws an error in strict mode)
+- C) Refers to the global object
+- D) Throws a `ReferenceError`
+
+<Answer>
+**Answer:** B (or C in non-strict mode)
+</Answer>
+
+---
+
+### **6. How can you explicitly set `this` when calling a function?**
+
+- A) Using `bind`, `call`, or `apply`
+- B) Using `this = value`
+- C) Using `setThis()`
+- D) Using `function.this()`
+
+<Answer>
+**Answer:** A
+</Answer>
+
+---
+
+### **7. What does `bind` do?**
+
+- A) Immediately calls the function with a fixed `this`
+- B) Creates a new function with a fixed `this`
+- C) Changes `this` for all future calls
+- D) Only works in strict mode
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **8. What will `this` be in an event handler (e.g., `button.addEventListener('click', function() { console.log(this); })`)?**
+
+- A) The global object
+- B) The DOM element that triggered the event
+- C) `undefined`
+- D) The event object
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **9. What is `this` in a constructor function (called with `new`)?**
+
+- A) The newly created object
+- B) The prototype of the object
+- C) The global object
+- D) `undefined`
+
+<Answer>
+**Answer:** A
+</Answer>
+
+---
+
+### **10. What happens if a constructor function is called without `new`?**
+
+- A) `this` refers to the global object (or `undefined` in strict mode)
+- B) It throws an error
+- C) `this` refers to the function itself
+- D) It still creates an object
+
+<Answer>
+**Answer:** A
+</Answer>
+
+---
+
+### **11. What is `this` inside a class method?**
+
+- A) The class itself
+- B) The instance of the class
+- C) `undefined`
+- D) The prototype object
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **12. What will `this` be in a nested function inside an object method?**
+
+```javascript
+const obj = {
+  name: "Bob",
+  greet: function () {
+    function inner() {
+      console.log(this.name);
+    }
+    inner();
+  },
+};
+obj.greet();
+```
+
+- A) `"Bob"`
+- B) `undefined` (or global object in non-strict mode)
+- C) The `obj`
+- D) The `inner` function
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **13. How can you preserve `this` in a nested function?**
+
+- A) Use `bind`, `call`, or `apply`
+- B) Store `this` in a variable (e.g., `const self = this`)
+- C) Use an arrow function for the nested function
+- D) All of the above
+
+<Answer>
+**Answer:** D
+</Answer>
+
+---
+
+### **14. What is `this` in a setTimeout callback (regular function)?**
+
+```javascript
+setTimeout(function () {
+  console.log(this);
+}, 1000);
+```
+
+- A) The global object
+- B) The `setTimeout` function
+- C) `undefined`
+- D) The caller object
+
+<Answer>
+**Answer:** A
+</Answer>
+
+---
+
+### **15. What is `this` in a setTimeout callback (arrow function)?**
+
+```javascript
+const obj = {
+  name: "Charlie",
+  greet: function () {
+    setTimeout(() => {
+      console.log(this.name);
+    }, 1000);
+  },
+};
+obj.greet();
+```
+
+- A) `undefined`
+- B) The global object
+- C) The `obj`
+- D) The `setTimeout` function
+
+<Answer>
+**Answer:** C
+</Answer>
+
+---
+
+### **16. What does `call` do?**
+
+- A) Calls a function with a given `this` and arguments as an array
+- B) Calls a function with a given `this` and individual arguments
+- C) Binds `this` permanently
+- D) Only works with arrow functions
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **17. What does `apply` do?**
+
+- A) Calls a function with a given `this` and arguments as an array
+- B) Calls a function with a given `this` and individual arguments
+- C) Binds `this` permanently
+- D) Only works with arrow functions
+
+<Answer>
+**Answer:** A
+</Answer>
+
+---
+
+### **18. What is `this` in a module (ES6 module) at the top level?**
+
+- A) The global object
+- B) `undefined`
+- C) The module exports object
+- D) `null`
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **19. What happens if `this` is used in an arrow function inside an object literal?**
+
+```javascript
+const obj = {
+  name: "Dave",
+  greet: () => {
+    console.log(this.name);
+  },
+};
+obj.greet();
+```
+
+- A) Prints `"Dave"`
+- B) Prints `undefined` (inherits `this` from outer scope)
+- C) Throws an error
+- D) Refers to the `obj`
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+### **20. What is `this` in a getter/setter method?**
+
+```javascript
+const obj = {
+  _name: "Eve",
+  get name() {
+    return this._name;
+  },
+};
+console.log(obj.name);
+```
+
+- A) The global object
+- B) The `obj`
+- C) `undefined`
+- D) The getter function
+
+<Answer>
+**Answer:** B
+</Answer>
+
+---
+
+These questions cover various scenarios involving `this` in JavaScript. Let me know if you'd like explanations for any of them!
