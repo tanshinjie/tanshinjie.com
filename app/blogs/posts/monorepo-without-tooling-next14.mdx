@@ -1,6 +1,6 @@
 ---
 title: "Exploring a Monorepo Setup with Next.js 12, 12+, and Vite without Monorepo Tooling - Next.js 14"
-publishedAt: 2025-05-31
+publishedAt: 2025-05-30
 ---
 
 ## Table of Contents
@@ -44,7 +44,13 @@ These represent a good mix of typical front-end use cases: from pure TS function
 
 In this post, I'll show you the exact setup and pitfalls we encountered — **without** using monorepo tooling — and how we solved them.
 
-This post is about the host framework **Next.js 14**.
+This blog walks through our **Next.js 14 host app** setup—each section progressively introduces new types of exports into the host, checking their behavior at every step:
+
+- `tsc --noEmit`
+- `npm run dev`
+- `npm run build && npm run start`
+
+<br />
 
 ---
 

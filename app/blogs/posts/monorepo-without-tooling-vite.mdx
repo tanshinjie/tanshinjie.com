@@ -1,0 +1,282 @@
+---
+title: "Exploring a Monorepo Setup with Next.js 12, 12+, and Vite without Monorepo Tooling - Vite"
+publishedAt: 2025-05-31
+---
+
+## Table of Contents
+
+- [Background](#background)
+- [Structure Overview](#structure-overview)
+- [Vite Setup](#vite-setup)
+- [Step 1: Importing a TypeScript Utility Function](#step-1-importing-a-typescript-utility-function)
+- [Step 2: Importing a Hook](#step-2-importing-a-hook)
+- [Step 3: Importing a React Component](#step-3-importing-a-react-component)
+- [Step 4: Importing a Client-Only Component](#step-4-importing-a-client-only-component)
+- [Step 5: Importing a Side-Effect Component](#step-5-importing-a-side-effect-component)
+- [Bundle Optimization](#bundle-optimization)
+- [Conclusion](#conclusion)
+
+
+## Background
+
+At our company, we adopted a **monorepo setup without any monorepo tooling**—no Nx, Turborepo, or even pnpm workspaces.
+
+Instead, we took the minimalist approach: **local `npm install`** between packages.
+
+### Frameworks in Our Setup
+
+- **Host apps**: Next.js 12, Next.js 14 (referred to as 12+), and Vite
+- **Shared library**: Built using Vite
+
+Our setup successfully supports:
+- ✅ **Hot reloading with a single dev server**
+- ✅ **Tree-shaking in the final bundle** *(works for Next.js 12+ and Vite only)*
+
+The shared library exports four kinds of features (which I call "stuffs" 😄):
+1. **UI components** (built with `shadcn/ui`)
+2. **Utility functions** (TypeScript functions and React hooks)
+3. **Client-only components** (e.g. `window.location.hostname`)
+4. **Side-effect components** (e.g. `d3-transition`)
+
+These represent a good mix of typical front-end use cases: from pure TS functions to client-only components and side-effect-heavy modules.
+
+In this post, I'll show you the exact setup and pitfalls we encountered — **without** using monorepo tooling — and how we solved them.
+
+This blog walks through our **Vite host app** setup—each section progressively introduces new types of exports into the host, checking their behavior at every step:
+
+- `tsc --noEmit`
+- `npm run dev`
+- `npm run build && npm run preview`
+
+<br />
+---
+
+## Structure Overview
+
+```bash
+root
+├── next12app
+├── next14app
+├── viteapp
+└── shared
+    ├── src
+    │   ├── @/components
+    │   ├── client-only-component
+    │   ├── side-effect-component
+    │   ├── utils
+    │   └── index.ts       # Barrel file
+    ├── tsconfig.json
+    └── vite.config.ts
+```
+
+* The shared package exports all modules through a single barrel file (`index.ts`)
+* `package.json` in the shared folder has its `main` field pointing to `src/index.ts`
+* We'll refine this setup progressively as we hit roadblocks.
+
+<br />
+---
+
+## Vite Setup
+
+
+```bash
+root
+├── next12app
+├── next14app
+├── viteapp
+│   ├── src
+│   ├── tsconfig.json
+│   └── vite.config.ts
+└── shared
+    ├── src
+    │   ├── @/components
+    │   ├── client-only-component
+    │   ├── side-effect-component
+    │   ├── utils
+    │   └── index.ts
+```
+
+The library is installed via:
+
+```bash
+npm install ../shared
+```
+<br/>
+---
+
+
+### Step 1: Importing a TypeScript Utility Function
+
+```ts
+import { add } from "shared";
+````
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ✅
+- `npm run build`: ✅
+
+<br />
+---
+
+### Step 2: Importing a Hook
+
+```ts
+import { useMediaQuery } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌
+- `npm run build`: ❌
+
+<br />
+---
+
+### Step 3: Importing a React Component
+
+```ts
+import { Button } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌
+- `npm run build`: ❌
+
+**Error:**
+```
+Module not found: Can't resolve '@/lib/utils'
+```
+
+### ✅ Fix
+
+#### Option 1: Convert to relative imports
+
+```ts
+// from
+import { cn } from "@/lib/utils";
+// to
+import { cn } from "../../lib/utils";
+```
+
+*Downside: Manual work for every new file or refactor.*
+
+#### Option 2: Add alias in `vite.config.ts`
+
+```ts
+resolve: {
+  alias: {
+    "@": path.resolve(__dirname, "../shared/src/@"),
+  }
+}
+```
+
+*Downside: Tight coupling to folder structure + host app can't reuse the `@` alias.*
+
+➡️ We'll go with Option 2 for now.
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ✅
+- `npm run build`: ❌
+
+**Error:**
+
+```
+TypeError: Cannot read properties of null (reading 'useState')
+```
+
+### Fix: Explicitly alias `react`
+
+```ts
+resolve: {
+  alias: {
+    "@": path.resolve(__dirname, "../shared/src/@"),
+    react: path.resolve(__dirname, "./node_modules/react"),
+  }
+}
+```
+
+✅ Everything works again.
+
+### Step 4: Importing a Client-Only Component
+
+```ts
+import { ClientOnlyComponent } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ✅
+- `npm run build`: ✅
+
+### Step 5: Importing a Side-Effect Component
+
+```ts
+import { SideEffectComponent } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ✅
+- `npm run build`: ✅
+
+
+Note: If you’re using `d3-selection` with `transition`, remember to import side-effects:
+
+```ts
+import "d3-transition";
+```
+
+Otherwise you'll see:
+
+```
+TypeError: .transition is not a function
+```
+
+Interestingly, `tsc` doesn’t catch this 🤷
+
+---
+
+## Bundle Optimization
+
+Initial output: **378.34 kB**
+
+<img src="/vite-unoptimised-bundle.png" width="500" />
+
+Multiple `react-dom` copies detected.
+
+Fix it by aliasing:
+
+```ts
+resolve: {
+  alias: {
+    "@": path.resolve(__dirname, "../shared/src/@"),
+    react: path.resolve(__dirname, "./node_modules/react"),
+    "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
+  }
+}
+```
+
+New output: **240.97 kB**
+
+Further improvement: Tree-shake `d3-transition` using:
+
+```json
+"sideEffects": ["**/node_modules/d3-transition"]
+```
+
+Final output: **206.92 kB**
+
+<img src="/vite-unused-component-in-bundle.png" width="500" />
+
+---
+
+## Conclusion
+
+* Vite's dev server works out of the box and feels lightweight
+* Manual config is needed for tree-shaking and alias resolution
+* Still, a clean setup is achievable **without monorepo tooling**
+
+[→ Example code on GitHub](https://github.com/tanshinjie/monorepo-without-tooling/tree/main/vite-main-src)
