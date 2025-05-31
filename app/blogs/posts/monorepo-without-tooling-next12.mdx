@@ -1,0 +1,308 @@
+---
+title: "Exploring a Monorepo Setup with Next.js 12, 12+, and Vite without Monorepo Tooling - Next.js 12"
+publishedAt: 2025-05-31
+---
+
+# Exploring a Monorepo Setup with Next.js 12, 12+, and Vite without Monorepo Tooling Next.js 12
+
+## Background
+
+At my company, we adopted a monorepo structure **without** using any dedicated monorepo tools like Nx, Turborepo, or `pnpm` workspaces.
+
+Instead, we went with the most basic approach — **local `npm install`** — to make things work.
+
+### Frameworks in Our Setup
+
+- **Host apps**: Next.js 12, Next.js 14 (referred to as 12+), and Vite
+- **Shared library**: Built using Vite
+
+Our setup successfully supports:
+- ✅ **Hot reloading with a single dev server**
+- ✅ **Tree-shaking in the final bundle** *(works for Next.js 12+ and Vite only)*
+
+The shared library exports four kinds of features (which I call "stuffs" 😄):
+1. **UI components** (built with `shadcn/ui`)
+2. **Utility functions** (TypeScript functions and React hooks)
+3. **Client-only components** (e.g. `window.location.hostname`)
+4. **Side-effect components** (e.g. `d3-transition`)
+
+These represent a good mix of typical front-end use cases: from pure TS functions to client-only components and side-effect-heavy modules.
+
+In this post, I'll show you the exact setup and pitfalls we encountered — **without** using monorepo tooling — and how we solved them.
+
+We'll go framework by framework, starting with **Next.js 12**.
+
+---
+
+## Structure Overview
+
+```bash
+root
+├── next12app
+├── next14app
+├── viteapp
+└── shared
+    ├── src
+    │   ├── @/components
+    │   ├── client-only-component
+    │   ├── side-effect-component
+    │   ├── utils
+    │   └── index.ts       # Barrel file
+    ├── tsconfig.json
+    └── vite.config.ts
+```
+
+* The shared package exports all modules through a single barrel file (`index.ts`)
+* `package.json` in the shared folder has its `main` field pointing to `src/index.ts`
+* We'll refine this setup progressively as we hit roadblocks.
+
+---
+
+## Next.js 12 Setup
+
+Here's our Next.js 12 app structure:
+
+```bash
+root
+├── next12app
+│   ├── pages
+│   ├── tsconfig.json
+│   └── next.config.js
+└── shared
+    ├── src
+    │   ├── @/components
+    │   ├── client-only-component
+    │   ├── side-effect-component
+    │   ├── utils
+    │   └── index.ts
+```
+
+The library is installed via:
+
+```bash
+npm install ../shared
+```
+<br/>
+---
+
+## Step 1: Importing a TypeScript Utility Function
+
+```ts
+import { add } from "shared";
+```
+<br/>
+
+* `tsc --noEmit` ✅
+* `npm run dev` ✅
+* `npm run build` ❌
+
+
+**Error:**
+
+```
+Module parse failed: Unexpected token (1:21)
+You may need an appropriate loader...
+```
+
+### ✅ Fix: Use `next-transpile-modules`
+
+Update `next.config.js`:
+
+```js
+const withTM = require("next-transpile-modules")(["shared"]);
+
+module.exports = withTM({
+  reactStrictMode: true,
+});
+```
+
+Now everything works:
+
+* `tsc --noEmit` ✅
+* `next dev` ✅
+* `next build` ✅
+
+<br/>
+
+---
+
+## Step 2: Importing a Hook
+
+```ts
+import { useMediaQuery } from "shared";
+```
+
+All commands work fine:
+
+All commands work successfully:
+
+- `tsc --noEmit`: ✅
+- `npm run dev`: ✅  
+- `npm run build`: ✅
+<br/>
+
+---
+
+## Step 3: Importing a React Component
+
+```ts
+import { Button } from "shared";
+```  
+<br/>
+
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌  
+- `npm run build`: ❌
+
+**Error:**
+
+```
+Module not found: Can't resolve '@/lib/utils'
+```
+
+### ✅ Fix: Resolve Path Aliases
+
+#### Option 1: Change imports to relative paths
+
+```ts
+// ❌ before
+import { cn } from "@/lib/utils";
+
+// ✅ after
+import { cn } from "../../lib/utils";
+```
+
+*Downside: Manual work for every new file or refactor.*
+
+#### Option 2: Configure path alias in the host app's `tsconfig.json`
+
+```json
+"baseUrl": ".",
+"paths": {
+  "@/*": ["../shared/src/@/*"]
+}
+```
+
+*Downside: Tight coupling to folder structure + host app can't reuse the `@` alias.*
+
+➡️ We'll go with Option 2 for now.
+
+---
+
+## Step 4: Importing a Client-Only Component
+```ts
+import { ClientOnlyComponent } from "shared";
+```
+<br/>
+- `tsc --noEmit`:  ✅
+- `npm run dev`: ❌
+- `npm run build`:  ❌
+
+**Error:**
+
+```
+ReferenceError: window is not defined
+```
+
+### ✅ Fix: Prevent SSR from rendering it
+
+#### Option 1: Exclude from barrel and dynamically import
+
+**Barrel file**:
+
+```ts
+// Don't export this
+// export * from "./client-only-component";
+```
+
+**Host app**:
+
+```tsx
+import dynamic from "next/dynamic";
+
+const ClientOnlyComponent = dynamic(
+  () => import("shared/src/client-only-component").then(mod => mod.ClientOnlyComponent),
+  { ssr: false }
+);
+```
+
+#### Option 2: Make the component SSR-aware
+
+```tsx
+const isClient = typeof window !== "undefined";
+
+export const ClientOnlyComponent = () => {
+  if (!isClient) return null;
+  return <div>{window.location.hostname}</div>;
+};
+```
+
+**⚠️ Warning:** This approach may cause hydration mismatch warnings. Use cautiously.
+
+➡️ We'll stick with **Option 1**.
+
+---
+
+## Step 5: Importing a Side-Effect Component
+
+- `tsc --noEmit`: ✅
+- `next dev`: ✅
+- `next build`: ✅
+
+### ⚠️ D3 Side Effects
+
+If you're using named imports like:
+
+```ts
+import { select } from "d3-select";
+```
+
+…but rely on side-effect modules like `d3-transition`, you'll get:
+
+```
+TS2339: Property 'transition' does not exist...
+```
+
+✅ Fix:
+
+```ts
+import "d3-transition";
+```
+<br/>
+---
+
+## Step 6: Final Bundle Size
+
+* **Node server bundle**: \~400 KB
+* **Client bundle**: \~300 KB
+
+Unfortunately, **tree-shaking is limited** in Next.js 12 due to Webpack 4 under the hood. You'll likely see some unused code getting pulled in.
+
+---
+
+## Conclusion
+
+In this post, we demonstrated how to:
+
+* Set up a basic monorepo without dedicated tooling
+* Share TS utilities, hooks, and components across multiple host apps
+* Handle issues with path aliasing, SSR, and bundling
+* Work around Next.js 12 limitations with `next-transpile-modules`
+
+While this setup **does work**, there are trade-offs:
+
+-  Manual handling of path aliases
+-  Fragile structure for client-only components
+-  Limited tree-shaking with Webpack 4
+
+<br/>
+---
+
+## What's Next?
+
+In the next post, we’ll look at **Next.js 14**. 
+
+Stay tuned!
+
+> Example code for this post is available at
+> 👉 [GitHub: tanshinjie/monorepo-without-tooling](https://github.com/tanshinjie/monorepo-without-tooling/tree/main/next12-main-src)
