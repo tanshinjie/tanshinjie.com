@@ -1,0 +1,479 @@
+---
+title: "Exploring a Monorepo Setup with Next.js 12, 12+, and Vite without Monorepo Tooling - Next.js 14"
+publishedAt: 2025-05-31
+---
+
+## Table of Contents
+
+- [Background](#background)
+- [Structure Overview](#structure-overview)
+- [Next.js 14 Setup](#nextjs-14-setup)
+- [Step 1: Importing a TypeScript Utility Function](#step-1-importing-a-typescript-utility-function)
+- [Step 2: Importing a Hook](#step-2-importing-a-hook)
+- [Step 3: Importing a React Component](#step-3-importing-a-react-component)
+- [Step 4: Importing a Client-Only Component](#step-4-importing-a-client-only-component)
+- [Step 5: Importing a Side-Effect Component](#step-5-importing-a-side-effect-component)
+- [Step 6: Tree-Shaking and Final Bundle Size](#step-6-tree-shaking-and-final-bundle-size)
+- [Conclusion](#conclusion)
+- [Notes When Using App Router](#notes-when-using-app-router)
+- [What's Next?](#whats-next)
+
+
+## Background
+
+At my company, we adopted a monorepo structure **without** using any dedicated monorepo tools like Nx, Turborepo, or `pnpm` workspaces.
+
+Instead, we went with the most basic approach — **local `npm install`** — to make things work.
+
+### Frameworks in Our Setup
+
+- **Host apps**: Next.js 12, Next.js 14 (referred to as 12+), and Vite
+- **Shared library**: Built using Vite
+
+Our setup successfully supports:
+- ✅ **Hot reloading with a single dev server**
+- ✅ **Tree-shaking in the final bundle** *(works for Next.js 12+ and Vite only)*
+
+The shared library exports four kinds of features (which I call "stuffs" 😄):
+1. **UI components** (built with `shadcn/ui`)
+2. **Utility functions** (TypeScript functions and React hooks)
+3. **Client-only components** (e.g. `window.location.hostname`)
+4. **Side-effect components** (e.g. `d3-transition`)
+
+These represent a good mix of typical front-end use cases: from pure TS functions to client-only components and side-effect-heavy modules.
+
+In this post, I'll show you the exact setup and pitfalls we encountered — **without** using monorepo tooling — and how we solved them.
+
+This post is about the host framework **Next.js 14**.
+
+---
+
+## Structure Overview
+
+```bash
+root
+├── next12app
+├── next14app
+├── viteapp
+└── shared
+    ├── src
+    │   ├── @/components
+    │   ├── client-only-component
+    │   ├── side-effect-component
+    │   ├── utils
+    │   └── index.ts       # Barrel file
+    ├── tsconfig.json
+    └── vite.config.ts
+```
+
+* The shared package exports all modules through a single barrel file (`index.ts`)
+* `package.json` in the shared folder has its `main` field pointing to `src/index.ts`
+* We'll refine this setup progressively as we hit roadblocks.
+
+<br/>
+---
+
+## Next.js 14 Setup
+
+Here's our Next.js 14 app structure:
+
+```bash
+root
+├── next14app
+│   ├── pages
+│   ├── app // notes on app router are in the end of the post
+│   ├── tsconfig.json
+│   └── next.config.js
+└── shared
+    └── src
+```
+
+The library is installed via:
+
+```bash
+npm install ../shared
+```
+<br/>
+
+---
+
+## Step 1: Importing a TypeScript Utility Function
+
+```ts
+import { add } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌
+- `npm run build`: ❌
+
+**Error:**
+```
+Module parse failed: Unexpected token (1:21)
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+> export function add(a: number, b: number): number {
+| 	return a + b;
+| }
+```
+
+### ✅ Fix: Use `transpilePackages`
+
+Update `next.config.js`:
+
+```js
+export default {
+  reactStrictMode: true,
+  transpilePackages: ["shared"],
+};
+```
+
+Now everything works:
+
+* `tsc --noEmit` ✅
+* `next dev` ✅
+* `next build` ✅
+
+<br/>
+---
+
+## Step 2: Importing a Hook
+
+```ts
+import { useMediaQuery } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌
+- `npm run build`: ❌
+
+**Error:**
+```
+TypeError: Cannot read properties of null (reading 'useState')
+../shared/src/utils/hooks/use-media-query.ts (4:41) @ useMediaQuery
+
+  2 |
+  3 | const useMediaQuery = (query: string) => {
+> 4 | 	const [matches, setMatches] = useState(false);
+    | 	                                       ^
+  5 |
+  6 | 	useEffect(() => {
+  7 | 		const media = window.matchMedia(query);
+```
+
+### ✅ Fix: Add resolve alias in `next.config.js`
+
+```js
+const nextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ["shared"],
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "react": path.resolve(__dirname, "./node_modules/react"),
+    };
+    return config;
+  },
+};
+
+export default nextConfig;
+```
+<br/>
+---
+
+## Step 3: Importing a React Component
+
+```ts
+import { Button } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌
+- `npm run build`: ❌
+
+**Error:**
+
+```
+Module not found: Can't resolve '@/lib/utils'
+```
+
+### ✅ Fix: Resolve Path Aliases
+
+#### Option 1: Change imports to relative paths
+
+```ts
+// ❌ before
+import { cn } from "@/lib/utils";
+
+// ✅ after
+import { cn } from "../../lib/utils";
+```
+
+*Downside: Manual work for every new file or refactor.*
+
+#### Option 2: Configure path alias in the host app's `tsconfig.json`
+
+```json
+"baseUrl": ".",
+"paths": {
+  "@/*": ["../shared/src/@/*"]
+}
+```
+
+*Downside: Tight coupling to folder structure + host app can't reuse the `@` alias.*
+
+➡️ We'll go with Option 2 for now.
+
+
+---
+
+## Step 4: Importing a Client-Only Component
+
+```ts
+import { ClientOnlyComponent } from "shared";
+```
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌
+- `npm run build`: ❌
+
+**Error:**
+```
+ReferenceError: window is not defined
+```
+
+### ✅ Fix: Prevent SSR from rendering it
+
+#### Option 1: Exclude from barrel and dynamically import
+
+**Barrel file**:
+
+```ts
+// Don't export this
+// export * from "./client-only-component";
+```
+
+**Host app**:
+
+```tsx
+import dynamic from "next/dynamic";
+
+const ClientOnlyComponent = dynamic(
+  () => import("shared/src/client-only-component").then(mod => mod.ClientOnlyComponent),
+  { ssr: false }
+);
+```
+
+#### Option 2: Make the component SSR-aware
+
+```tsx
+const isClient = typeof window !== "undefined";
+
+export const ClientOnlyComponent = () => {
+  if (!isClient) return null;
+  return <div>{window.location.hostname}</div>;
+};
+```
+
+**⚠️ Warning:** This approach may cause hydration mismatch warnings. Use cautiously.
+
+➡️ We'll stick with **Option 1**.
+
+---
+
+## Step 5: Importing a Side-Effect Component
+
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ✅
+- `npm run build`: ✅
+
+### ⚠️ D3 Side Effects
+
+If you're using named imports like:
+
+```ts
+import { select } from "d3-selection";
+```
+
+…but rely on side-effect modules like `d3-transition`, you'll get:
+
+```
+TS2339: Property 'transition' does not exist...
+```
+
+✅ Fix:
+
+```ts
+import "d3-transition";
+```
+
+This works in dev and build.
+
+---
+
+## Step 6: Tree-Shaking and Final Bundle Size
+
+Thanks to Webpack 5, **Next.js 14 offers significantly better tree-shaking** than Next.js 12.
+Since Next.js 13 onwards, there is a config `optimizePackageImports` we can turn on to enable better tree-shaking 
+
+```jsx
+const nextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ["shared"],
+  experimental: {
+    optimizePackageImports: ["shared"],   // this will allow tree-shake
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "react": path.resolve(__dirname, "./node_modules/react"),
+    };
+    return config;
+  },
+};
+```
+
+Now let's see the new bundle size
+
+- Node: 100+ kb **(~37% reduction)**
+- Client: 320+ kb **(~33% reduction)**
+
+<br/>
+---
+
+## Conclusion
+
+In this post, we demonstrated how to:
+
+* Set up a basic monorepo without dedicated tooling
+* Share TS utilities, hooks, and components across host apps
+* Resolve path aliasing issues with Webpack 5
+* Handle SSR and client-only components with the App Router
+* Take advantage of modern tree-shaking improvements in Next.js 14
+
+Compared to Next.js 12, this was a much smoother experience:
+
+* ✅ No `next-transpile-modules` needed
+* ✅ Client components just need `"use client"`
+* ✅ Webpack 5 aliasing is straightforward
+* ✅ Tree-shaking works as expected
+
+<br/>
+---
+
+## Notes When Using App Router
+
+If you're switching from the **Pages Router** to the **App Router**, there are some subtle but important changes to be aware of.
+
+### 1. Remove Webpack Aliasing for `react`
+
+With the Pages Router, we previously had to alias React explicitly:
+
+```js
+// next.config.js (Pages Router only)
+webpack: (config) => {
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    react: path.resolve(__dirname, "./node_modules/react"),
+  };
+  return config;
+};
+```
+
+However, **this breaks the App Router**.
+
+If you're using the App Router, remove this alias. Keeping it will cause the following runtime error:
+
+```
+TypeError: _react.cache is not a function
+```
+
+And during build:
+
+```
+TypeError: n.cache is not a function
+```
+
+✅ **Fix**: Remove the `resolve.alias` block entirely from your `next.config.js`. With the App Router, you only need:
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ["shared"],
+  experimental: {
+    optimizePackageImports: ["shared"],
+  },
+};
+
+module.exports = nextConfig;
+```
+<br/>
+---
+
+### 2. Barrel File Imports Now Work with Client Components (Dev Mode)
+
+With the App Router and `"use client"` components, **you can now export client-only modules via your shared library's barrel file**, and it will work in **development**.
+
+```ts
+// shared/src/index.ts
+export * from "./@";
+export * from "./utils";
+export * from "./client-only-component"; // ✅ dev mode works
+export * from "./side-effect-component";
+```
+
+But there's a catch...
+
+---
+
+### 3. SSR Errors Still Require `dynamic()` for Client-Only Code
+
+Even with `"use client"` at the top of your component, **direct imports from the shared package will still trigger SSR errors**, like:
+
+```
+ReferenceError: window is not defined
+```
+
+This is because the App Router will try to SSR everything unless explicitly told not to.
+
+✅ **Fix**: Use Next.js's `dynamic` import with `ssr: false`, like so:
+
+```tsx
+// ✅ Works with App Router
+const ClientOnlyComponent = dynamic(
+  () => import("shared").then((mod) => mod.ClientOnlyComponent),
+  { ssr: false }
+);
+```
+
+This is much cleaner than before, because now you can import **from the shared package directly**, not from deep paths like `shared/src/client-only-component`.
+
+---
+
+### 4. Tree-Shaking Still Works — But the Bundle Is Bigger
+
+Tree-shaking remains effective in Next.js 14 with the App Router, but we noticed the **final bundle size is noticeably larger** than with the Pages Router:
+
+- Node: 300+ kb
+- Client: 600+ kb
+
+This is likely due to the App Router's bundling strategy and extra runtime code required for React Server Components (RSC).
+
+While not a blocker, it's something to keep in mind if you're optimizing for minimal footprint.
+
+---
+
+## What's Next?
+
+In the next post, we'll look at **Vite**!
+
+Stay tuned 👀
+
+> Example code for this post is available at  
+> 👉 [GitHub: tanshinjie/monorepo-without-tooling](https://github.com/tanshinjie/monorepo-without-tooling/tree/main/next14-main-src)
+

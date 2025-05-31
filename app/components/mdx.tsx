@@ -51,10 +51,16 @@ function RoundedImage(props) {
 
 function Code({ children, ...props }) {
   if (!children) {
-    return <code {...props} />;
+    return <code className="bg-gray-100" {...props} />;
   }
   let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+  return (
+    <code
+      dangerouslySetInnerHTML={{ __html: codeHTML }}
+      className="bg-gray-100"
+      {...props}
+    />
+  );
 }
 
 function slugify(str) {

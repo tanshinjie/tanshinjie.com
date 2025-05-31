@@ -1,9 +1,21 @@
 ---
 title: "Exploring a Monorepo Setup with Next.js 12, 12+, and Vite without Monorepo Tooling - Next.js 12"
-publishedAt: 2025-05-31
+publishedAt: 2025-05-30
 ---
 
-# Exploring a Monorepo Setup with Next.js 12, 12+, and Vite without Monorepo Tooling Next.js 12
+## Table of Contents
+
+- [Background](#background)
+- [Structure Overview](#structure-overview)
+- [Next.js 12 Setup](#nextjs-12-setup)
+- [Step 1: Importing a TypeScript Utility Function](#step-1-importing-a-typescript-utility-function)
+- [Step 2: Importing a Hook](#step-2-importing-a-hook)
+- [Step 3: Importing a React Component](#step-3-importing-a-react-component)
+- [Step 4: Importing a Client-Only Component](#step-4-importing-a-client-only-component)
+- [Step 5: Importing a Side-Effect Component](#step-5-importing-a-side-effect-component)
+- [Step 6: Final Bundle Size](#step-6-final-bundle-size)
+- [Conclusion](#conclusion)
+- [What's Next?](#whats-next)
 
 ## Background
 
@@ -30,7 +42,7 @@ These represent a good mix of typical front-end use cases: from pure TS function
 
 In this post, I'll show you the exact setup and pitfalls we encountered — **without** using monorepo tooling — and how we solved them.
 
-We'll go framework by framework, starting with **Next.js 12**.
+This post is about the host framework **Next.js 12**.
 
 ---
 
@@ -56,6 +68,7 @@ root
 * `package.json` in the shared folder has its `main` field pointing to `src/index.ts`
 * We'll refine this setup progressively as we hit roadblocks.
 
+<br />
 ---
 
 ## Next.js 12 Setup
@@ -90,15 +103,13 @@ npm install ../shared
 ```ts
 import { add } from "shared";
 ```
-<br/>
 
-* `tsc --noEmit` ✅
-* `npm run dev` ✅
-* `npm run build` ❌
-
+Commands results:
+- `tsc --noEmit`: ✅
+- `npm run dev`: ❌
+- `npm run build`: ❌
 
 **Error:**
-
 ```
 Module parse failed: Unexpected token (1:21)
 You may need an appropriate loader...
@@ -132,30 +143,26 @@ Now everything works:
 import { useMediaQuery } from "shared";
 ```
 
-All commands work fine:
-
-All commands work successfully:
-
+Commands results:
 - `tsc --noEmit`: ✅
-- `npm run dev`: ✅  
+- `npm run dev`: ✅
 - `npm run build`: ✅
-<br/>
 
+<br />
 ---
 
 ## Step 3: Importing a React Component
 
 ```ts
 import { Button } from "shared";
-```  
-<br/>
+```
 
+Commands results:
 - `tsc --noEmit`: ✅
-- `npm run dev`: ❌  
+- `npm run dev`: ❌
 - `npm run build`: ❌
 
 **Error:**
-
 ```
 Module not found: Can't resolve '@/lib/utils'
 ```
@@ -193,13 +200,13 @@ import { cn } from "../../lib/utils";
 ```ts
 import { ClientOnlyComponent } from "shared";
 ```
-<br/>
-- `tsc --noEmit`:  ✅
+
+Commands results:
+- `tsc --noEmit`: ✅
 - `npm run dev`: ❌
-- `npm run build`:  ❌
+- `npm run build`: ❌
 
 **Error:**
-
 ```
 ReferenceError: window is not defined
 ```
@@ -254,7 +261,7 @@ export const ClientOnlyComponent = () => {
 If you're using named imports like:
 
 ```ts
-import { select } from "d3-select";
+import { select } from "d3-selection";
 ```
 
 …but rely on side-effect modules like `d3-transition`, you'll get:
@@ -300,7 +307,7 @@ While this setup **does work**, there are trade-offs:
 
 ## What's Next?
 
-In the next post, we’ll look at **Next.js 14**. 
+In the next post, we'll look at **Next.js 14**. 
 
 Stay tuned!
 
