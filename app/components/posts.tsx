@@ -1,6 +1,6 @@
 import { Link } from "next-view-transitions";
 
-import { formatDate, getBlogPosts } from "app/blogs/utils";
+import { formatDate, getBlogPosts } from "app/posts/utils";
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts();
@@ -20,7 +20,7 @@ export function BlogPosts() {
           <Link
             key={post.slug}
             className="group block transition-all"
-            href={`/blogs/${post.slug}`}
+            href={`/posts/${post.slug}`}
           >
             <div className="flex flex-col space-y-1">
               <div className="w-full flex flex-col md:flex-row md:items-baseline space-y-2 md:space-y-0 md:space-x-4">
