@@ -187,15 +187,13 @@ export default function Page() {
               <span className="text-neutral-400 flex-shrink-0">•</span>
               <span>
                 <Link
-                  href="https://www.16personalities.com/istj-personality"
+                  href="https://www.16personalities.com/isfp-personality"
                   target="_blank"
                   className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors"
                 >
-                  ISTJ
-                </Link>{" "}
-                <span className="text-neutral-500 text-sm">
-                  (Last tested in Feb 2025)
-                </span>
+                  ISFP</Link>
+                {" "}
+                <span className="text-neutral-500 text-sm">(Last tested in July 2025)</span>
               </span>
             </li>
           </ul>
