@@ -41,17 +41,14 @@ export default function Page() {
             <div className="flex items-start gap-2">
               <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
               <span className="flex flex-wrap items-center">
-                Building Alternative Assets Ecosystem @&nbsp;
+                Software Engineer (Frontend) @&nbsp;
                 <Link
-                  href="https://alta.exchange/about-alta"
+                  href="https://manus.im"
                   target="_blank"
                   className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors"
                 >
-                  Alta
+                  Manus
                 </Link>
-                <span className="text-neutral-500 text-sm ml-1">
-                  (formerly known as Fundnel)
-                </span>
               </span>
             </div>
             <div className="flex items-start gap-2">
@@ -146,27 +143,45 @@ export default function Page() {
           <h2 className="text-lg sm:text-xl font-medium border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4">
             Previously
           </h2>
-          <div className="flex items-start gap-2">
-            <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
-            <span>
-              Building modern web apps @{" "}
-              <Link
-                href="https://aegis-technologies.com.sg/"
-                target="_blank"
-                className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors inline-flex"
-              >
-                Aegis Technologies
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="https://www.proofpoint.com/us/dathena-is-now-proofpoint"
-                target="_blank"
-                className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors inline-flex"
-              >
-                Dathena
-              </Link>{" "}
-              <span className="text-neutral-500 text-sm">(now ProofPoint)</span>
-            </span>
+          <div className="space-y-3">
+            <div className="flex items-start gap-2">
+              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
+              <span className="flex flex-wrap items-center">
+                Building Alternative Assets Ecosystem @&nbsp;
+                <Link
+                  href="https://alta.exchange/about-alta"
+                  target="_blank"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors"
+                >
+                  Alta
+                </Link>
+                <span className="text-neutral-500 text-sm ml-1">
+                  (formerly known as Fundnel)
+                </span>
+              </span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
+              <span>
+                Building modern web apps @{" "}
+                <Link
+                  href="https://aegis-technologies.com.sg/"
+                  target="_blank"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors inline-flex"
+                >
+                  Aegis Technologies
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="https://www.proofpoint.com/us/dathena-is-now-proofpoint"
+                  target="_blank"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors inline-flex"
+                >
+                  Dathena
+                </Link>{" "}
+                <span className="text-neutral-500 text-sm">(now ProofPoint)</span>
+              </span>
+            </div>
           </div>
         </div>
 
