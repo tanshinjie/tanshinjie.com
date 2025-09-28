@@ -25,17 +25,6 @@ export default function Footer() {
             className="flex items-center text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
             rel="noopener noreferrer"
             target="_blank"
-            href="/rss"
-          >
-            <ArrowIcon />
-            <span className="ml-2 font-medium">rss</span>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white transition-colors"
-            rel="noopener noreferrer"
-            target="_blank"
             href="https://github.com/tanshinjie"
           >
             <ArrowIcon />

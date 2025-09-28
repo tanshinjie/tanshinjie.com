@@ -39,7 +39,7 @@ export default function Page() {
           </h2>
           <div className="space-y-3">
             <div className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
+              <span className="text-neutral-500 flex-shrink-0">→</span>
               <span className="flex flex-wrap items-center">
                 Software Engineer (Frontend) @&nbsp;
                 <Link
@@ -52,92 +52,15 @@ export default function Page() {
               </span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
+              <span className="text-neutral-500 flex-shrink-0">→</span>
               <span>
                 Living in <span className="font-medium">📍 Singapore</span>
               </span>
             </div>
-            <div className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
-              <span className="flex flex-wrap items-center">
-                Recently listening to&nbsp;
-                <Link
-                  href="https://www.youtube.com/watch?v=vR6_ZVKEhJ4"
-                  target="_blank"
-                  className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white font-medium transition-colors"
-                >
-                  Ne-Yo Tiny Desk Concert 🎶
-                </Link>
-              </span>
-            </div>
           </div>
         </div>
 
-        <div className="space-y-2">
-          <h2 className="text-lg sm:text-xl font-medium border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4">
-            Tech Stack
-          </h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-xs sm:text-sm uppercase text-neutral-500 dark:text-neutral-400 font-medium mb-2">
-                Frontend
-              </h3>
-              <div className="flex flex-wrap">
-                <TechBadge>React</TechBadge>
-                <TechBadge>Next.js</TechBadge>
-                <TechBadge>TypeScript</TechBadge>
-                <TechBadge>React Native</TechBadge>
-                <TechBadge>TailwindCSS</TechBadge>
-                <TechBadge>Shadcn UI</TechBadge>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xs sm:text-sm uppercase text-neutral-500 dark:text-neutral-400 font-medium mb-2">
-                Backend
-              </h3>
-              <div className="flex flex-wrap">
-                <TechBadge>Node.js</TechBadge>
-                <TechBadge>NestJS</TechBadge>
-                <TechBadge>TypeORM</TechBadge>
-                <TechBadge>MySQL</TechBadge>
-                <TechBadge>Firebase</TechBadge>
-                <TechBadge>REST API</TechBadge>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xs sm:text-sm uppercase text-neutral-500 dark:text-neutral-400 font-medium mb-2">
-                Tools & Infrastructure
-              </h3>
-              <div className="flex flex-wrap">
-                <TechBadge>Docker</TechBadge>
-                <TechBadge>GitHub Actions</TechBadge>
-                <TechBadge>Terraform</TechBadge>
-                <TechBadge>Google Cloud</TechBadge>
-                <TechBadge>Vite</TechBadge>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="space-y-2">
-          <h2 className="text-lg sm:text-xl font-medium border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4">
-            What I've Been Doing
-          </h2>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
-              <span>Web and mobile application development</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
-              <span>API development and database design</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
-              <span>Cloud infrastructure setup with IaC</span>
-            </li>
-          </ul>
-        </div>
 
         <div className="space-y-2">
           <h2 className="text-lg sm:text-xl font-medium border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4">
@@ -145,7 +68,7 @@ export default function Page() {
           </h2>
           <div className="space-y-3">
             <div className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
+              <span className="text-neutral-500 flex-shrink-0">→</span>
               <span className="flex flex-wrap items-center">
                 Building Alternative Assets Ecosystem @&nbsp;
                 <Link
@@ -161,7 +84,7 @@ export default function Page() {
               </span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-neutral-500 mt-1 flex-shrink-0">→</span>
+              <span className="text-neutral-500 flex-shrink-0">→</span>
               <span>
                 Building modern web apps @{" "}
                 <Link
@@ -217,7 +140,7 @@ export default function Page() {
 
       <div className="mt-10 sm:mt-12">
         <h2 className="text-lg sm:text-xl font-medium border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4 sm:mb-6">
-          Blog Posts
+          Writing/Notes
         </h2>
         <BlogPosts />
       </div>
